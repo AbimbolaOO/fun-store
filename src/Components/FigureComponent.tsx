@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styled from '@emotion/styled';
-import { Link as RouterLink } from 'react-router-dom';
+import { ImgInfoTitleAction } from '../Components/StyledLinks';
 
 interface FigureC {
   columnLineStart: string;
@@ -33,26 +33,6 @@ const ImgInfo = styled.section`
 const ImgInfoTitle = styled.p`
   font-size: 2rem;
   display: block;
-`;
-
-const ImgInfoTitleAction = styled(RouterLink)`
-  font-size: 1.5rem;
-  display: flex;
-  text-decoration: none;
-  transition: color 0.7s;
-
-  &:link {
-    color: #212121;
-  }
-  &:visited {
-    color: #212121;
-  }
-  &:hover {
-    color: #f0e504;
-  }
-  &:active {
-    color: #212121;
-  }
 `;
 
 const Figure: any = styled.div<StyledFigureProps>`

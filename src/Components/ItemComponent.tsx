@@ -4,7 +4,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import SearchIcon from '@mui/icons-material/Search';
 import MultipleStopIcon from '@mui/icons-material/MultipleStop';
 
-interface ItemComp {
+export interface ItemComp {
   imgSrc: string;
   imgSrc2: string;
   title: string;

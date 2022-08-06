@@ -10,10 +10,12 @@ interface Boxable {
   margin?: string;
   textAlign?: string;
   bgColor?: string;
+  fontSize?: string;
 }
 
 const Box = styled.div<Boxable>`
   display: flex;
+  font-size: ${({ fontSize }) => (fontSize ? fontSize : '1rem')};
   flex-direction: ${({ direction }) =>
     direction === 'column' ? 'column' : 'row'};
   gap: ${({ gap }) => (gap ? gap : '0px')};
