@@ -30,7 +30,7 @@ const HeadingText = styled.div`
 const MainText = styled.div`
   padding-bottom: 20px;
   grid-column: 3 / span 1;
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-align: center;
   color: #535454;
 

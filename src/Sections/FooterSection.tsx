@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+
 import {
   Discovery,
   Maestro,
@@ -8,16 +9,8 @@ import {
   Visa,
 } from '../Components/PaymentsVendorIcons';
 import SocialIconsGroup from '../Components/SocialIconsGroup';
-import StyledRouterLinkSecoundary from '../Components/RouterStyledLinkSecoundary';
-
-const FooterContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-  padding: 100px;
-  /* border: 2px solid rebeccapurple; */
-`;
+import { StyledRouterLinkSecoundary } from '../Components/StyledLinks';
+import Box from '../Components/Box';
 
 const FooterLinksGroup = styled.ul`
   display: flex;
@@ -33,23 +26,10 @@ const FooterLinksGroupItem = styled.li`
   cursor: pointer;
 `;
 
-const FooterTermsSection = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  text-align: center;
-`;
-
-const PaymentVendorsIconGroup = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 6px;
-`;
-
 const FooterSection: React.FC = () => {
   return (
     <>
-      <FooterContainer>
+      <Box direction="column" align="center" gap="40px" padding="100px">
         <FooterLinksGroup>
           <FooterLinksGroupItem>
             <StyledRouterLinkSecoundary to="pages/faqs">
@@ -68,19 +48,19 @@ const FooterSection: React.FC = () => {
           </FooterLinksGroupItem>
         </FooterLinksGroup>
         <SocialIconsGroup noVerticalLine />
-        <FooterTermsSection>
+        <Box wrap="wrap" justify="center" textAlign="center">
           &copy; 2022 WhyteShops. All Rights Reserved | (+234) 8119995541 |
           abimbolaolayemiwhyte@gmail.com
-        </FooterTermsSection>
-        <PaymentVendorsIconGroup>
+        </Box>
+        <Box justify="center" gap="6px">
           <Opay />
           <Discovery />
           <Maestro />
           <Master />
           <Visa />
           <Paypal />
-        </PaymentVendorsIconGroup>
-      </FooterContainer>
+        </Box>
+      </Box>
     </>
   );
 };

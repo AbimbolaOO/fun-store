@@ -1,33 +1,50 @@
-import { createGlobalStyle } from 'styled-components';
-// import { css, Global } from '@emotion/core'
+import { css } from '@emotion/react';
 
-const GlobalStyles = createGlobalStyle`
-    *, *::before, *::after {
+const GlobalStyles = css`
+  *,
+  *::before,
+  *::after {
     box-sizing: border-box;
-    }
-    * {
+  }
+  * {
     margin: 0;
-    }
-    html, body {
+  }
+  html,
+  body {
     height: 100%;
-    }
-    body {
+  }
+  body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    }
-    img, picture, video, canvas, svg {
+    font-family: 'Work Sans', sans-serif;
+  }
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
     display: block;
     max-width: 100%;
-    }
-    input, button, textarea, select {
+  }
+  input,
+  button,
+  textarea,
+  select {
     font: inherit;
-    }
-    p, h1, h2, h3, h4, h5, h6 {
+  }
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     overflow-wrap: break-word;
-    }
-    #root, #__next {
+  }
+  #root,
+  #__next {
     isolation: isolate;
-    }
+  }
 `;
 
 export default GlobalStyles;

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import StyledRouterLinkSecoundary from '../Components/RouterStyledLinkSecoundary';
+import { StyledRouterLinkSecoundary } from './StyledLinks';
 
 interface HoverAble {
   children: React.ReactNode;
@@ -68,9 +68,9 @@ export const HoverDropDownList: React.FC<HoverAble> = ({
   return (
     <HoverDropDownTemplate label={children} color="#535454">
       <DropDownListContent>
-        {options.map((option: any) => (
-          <DropDownListRowElement>
-            <StyledRouterLinkSecoundary to={option.path} key={option.label}>
+        {options.map((option: { path: string; label: string }) => (
+          <DropDownListRowElement key={option.label}>
+            <StyledRouterLinkSecoundary to={option.path}>
               {option.label}
             </StyledRouterLinkSecoundary>
           </DropDownListRowElement>
