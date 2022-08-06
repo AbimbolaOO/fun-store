@@ -84,3 +84,27 @@ export const AnimatedIconLink = styled(RouterLink)`
     content: '';
   }
 `;
+
+interface ImgInfoTitleActionable {
+  fontSize?: string;
+}
+
+export const ImgInfoTitleAction = styled(RouterLink)<ImgInfoTitleActionable>`
+  font-size: ${({ fontSize }) => (fontSize ? fontSize : '1.5rem')};
+  display: flex;
+  text-decoration: none;
+  transition: color 0.7s;
+
+  &:link {
+    color: #212121;
+  }
+  &:visited {
+    color: #212121;
+  }
+  &:hover {
+    color: #f0e504;
+  }
+  &:active {
+    color: #212121;
+  }
+`;
