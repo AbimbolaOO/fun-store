@@ -7,7 +7,7 @@ import { BasicLink } from '../Components/StyledLinks';
 import { FormComponent, FormField } from '../Components/FormComponent';
 
 const Register = () => {
-  const loginSchema = Yup.object().shape({
+  const schema = Yup.object().shape({
     firstName: Yup.string()
       .min(2, 'Too short')
       .required('Please provide a first name'),
@@ -18,9 +18,16 @@ const Register = () => {
     password: Yup.string().required('Password is required'),
   });
 
-  type LoginType = Yup.InferType<typeof loginSchema>;
+  type LoginType = Yup.InferType<typeof schema>;
 
-  const initialValues: any = {
+  type InitialValues = {
+    firstName: String;
+    lastName: String;
+    email: String;
+    password: String;
+  };
+
+  const initialValues: InitialValues = {
     firstName: '',
     lastName: '',
     email: '',
@@ -35,7 +42,7 @@ const Register = () => {
     <Layout23>
       <FormComponent
         initialValues={initialValues}
-        loginSchema={loginSchema}
+        schema={schema}
         onSubmit={onSubmit}
       >
         <FormField type="text" id="firstName" label={true} />

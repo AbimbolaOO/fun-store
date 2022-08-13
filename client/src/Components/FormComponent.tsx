@@ -8,9 +8,9 @@ import TertiaryText from './TertiaryText';
 
 interface IFormComponent {
   initialValues: any;
-  loginSchema: any;
+  schema: any;
   onSubmit: any;
-  children: any;
+  children: React.ReactElement[];
 }
 
 interface IFormField {
@@ -98,7 +98,7 @@ export const FormField: React.FC<IFormField> = ({
 
 export const FormComponent: React.FC<IFormComponent> = ({
   initialValues,
-  loginSchema,
+  schema,
   onSubmit,
   children,
 }) => {
@@ -119,7 +119,7 @@ export const FormComponent: React.FC<IFormComponent> = ({
       </Box>
       <Formik
         initialValues={initialValues}
-        validationSchema={loginSchema}
+        validationSchema={schema}
         onSubmit={onSubmit}
       >
         {({ errors, handleSubmit, handleChange }) => (
