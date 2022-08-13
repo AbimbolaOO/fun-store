@@ -8,14 +8,19 @@ import { BasicLink } from '../Components/StyledLinks';
 import { FormComponent, FormField } from '../Components/FormComponent';
 
 const LogIn: React.FC = () => {
-  const loginSchema = Yup.object().shape({
+  const schema = Yup.object().shape({
     email: Yup.string().email().required('Email is required'),
     password: Yup.string().required('Password is required'),
   });
 
-  type LoginType = Yup.InferType<typeof loginSchema>;
+  type LoginType = Yup.InferType<typeof schema>;
 
-  const initialValues: any = {
+  type InitialValues = {
+    email: String;
+    password: String;
+  };
+
+  const initialValues: InitialValues = {
     email: '',
     password: '',
   };
@@ -28,7 +33,7 @@ const LogIn: React.FC = () => {
     <Layout23>
       <FormComponent
         initialValues={initialValues}
-        loginSchema={loginSchema}
+        schema={schema}
         onSubmit={onSubmit}
       >
         <FormField type="text" id="email" />
