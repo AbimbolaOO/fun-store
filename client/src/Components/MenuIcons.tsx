@@ -102,7 +102,7 @@ export const Cart: React.FC<ISvgDimensions> = ({
   );
 };
 
-export const HamburgerMenu: React.FC<ISvgDimensions> = ({
+export const HamburgerMenuIcon: React.FC<ISvgDimensions> = ({
   width = '20px',
   height = '20px',
 }) => {

@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { StyledRouterLinkSecoundary } from './StyledLinks';
 
-interface IHoverDropDownList {
+interface IHoverDropDown {
   children: React.ReactNode;
   options: any;
 }
@@ -19,10 +19,8 @@ const DropDownContainer = styled.div`
 `;
 
 const DropDownLabel = styled.div`
-  /* border: 2px solid lavender; */
   display: flex;
   align-items: center;
-  /* &:focus + div, */
 `;
 
 const DropDownContentWrapper = styled.div`
@@ -61,7 +59,7 @@ const HoverDropDownTemplate: React.FC<any> = ({ label, children, color }) => {
   );
 };
 
-export const HoverDropDownList: React.FC<IHoverDropDownList> = ({
+export const HoverDropDown: React.FC<IHoverDropDown> = ({
   children,
   options,
 }) => {

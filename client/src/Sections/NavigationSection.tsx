@@ -1,19 +1,21 @@
 import styled from '@emotion/styled';
 import { Link as RouterLink } from 'react-router-dom';
-import { HoverDropDownList } from '../Components/HoverDropDown';
+
+import { HoverDropDown } from '../Components/HoverDropDown';
+import HamburgerMenu from '../Components/HamburgerMenu';
+// import AnimatingHambugerIcon from '../Components/AnimatingHambugerIcon';
 
 import {
   Search,
   Profile,
   Love,
   Cart,
-  HamburgerMenu,
+  HamburgerMenuIcon,
 } from '../Components/MenuIcons';
 
 const PageLinkContainer = styled.ul`
   display: flex;
   list-style: none;
-  /* list-style-type: none; */
   gap: 20px;
 
   @media screen and (max-width: 990px) {
@@ -33,18 +35,14 @@ const NavMenuSuperContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   height: 80px;
-  /* padding: 40px; */
-  /* border: 2px solid firebrick; */
 `;
 
 const MenuListItem = styled.li`
   cursor: pointer;
-  /* text-decoration: none; */
 `;
 
 const StyledRouterLink = styled(RouterLink)`
   text-decoration: none;
-  /* border: 2px solid rebeccapurple; */
   display: inline-block;
   position: relative;
   color: #535454;
@@ -103,12 +101,21 @@ const shopDropDownOptions = [
   { label: 'Chairs', path: '/' },
 ];
 
+const menuOptions = [
+  { label: 'On Sale', path: '/collections/top-picks' },
+  { label: 'Shop', path: '/collections' },
+  { label: 'Blog', path: '/blogs/post' },
+  { label: 'About', path: '/pages/about-us' },
+  { label: 'FAQs', path: '/pages/faqs' },
+  { label: 'Contacts', path: '/pages/contact-us' },
+];
+
 const NavigationSection: React.FC = () => {
   return (
     <>
       <NavMenuSuperContainer>
         <LeftOptionalView>
-          <HamburgerMenu />
+          <HamburgerMenuIcon />
         </LeftOptionalView>
         <RightOptionalView>
           <StyledRouterLink to="/">
@@ -122,10 +129,9 @@ const NavigationSection: React.FC = () => {
             </StyledRouterLink>
           </MenuListItem>
           <MenuListItem>
-            {/* <StyledRouterLink to="/collections">Shop</StyledRouterLink> */}
-            <HoverDropDownList options={shopDropDownOptions}>
+            <HoverDropDown options={shopDropDownOptions}>
               <StyledRouterLink to="/collections">Shop</StyledRouterLink>
-            </HoverDropDownList>
+            </HoverDropDown>
           </MenuListItem>
           <MenuListItem>
             <StyledRouterLink to="/blogs/post">Blog</StyledRouterLink>
@@ -159,7 +165,9 @@ const NavigationSection: React.FC = () => {
             <Cart />
           </RouterLink>
           <RightOptionalView>
-            <HamburgerMenu />
+            <HamburgerMenu options={menuOptions}>
+              <HamburgerMenuIcon />
+            </HamburgerMenu>
           </RightOptionalView>
         </NavIconsGroup>
       </NavMenuSuperContainer>
