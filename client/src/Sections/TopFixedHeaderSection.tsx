@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
+
 import VerticalLine from '../Components/VerticalLine';
 import SocialIconsGroup from '../Components/SocialIconsGroup';
+import SelectMenu from '../Components/SelectMenu';
 
 const FixHeader = styled.div`
   grid-column: 2/3;
@@ -10,13 +12,14 @@ const FixHeader = styled.div`
 
   align-items: center;
   line-height: 50px;
-  /* height: 100px; */
-  /* border: 2px solid red; */
+  color: #535454;
+
   @media screen and (max-width: 990px) {
     justify-content: center;
     width: 400px;
     margin: auto;
     padding: 20px 0;
+    font-size: 0.9rem;
   }
 
   @media screen and (max-width: 575px) {
@@ -44,13 +47,17 @@ const DecoratedBtag = styled.b`
   text-decoration: underline;
 `;
 
+const options = [
+  { key: 'USD', value: 'USD - US Dollar' },
+  { key: 'EUR', value: 'EUR - Euro' },
+  { key: 'GBP', value: 'GBP - British Pound' },
+];
+
 const TopFixedHeaderSection: React.FC = () => {
   return (
     <FixHeader>
       <FixHeaderRightContent>
-        {/* <HoverDropDown> */}
-        NGN
-        {/* </HoverDropDown> */}
+        <SelectMenu options={options}>NGN</SelectMenu>
         <VerticalLine />
         <ContactsDeets>
           <VerticalLine />

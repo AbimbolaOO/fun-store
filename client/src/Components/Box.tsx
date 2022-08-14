@@ -13,6 +13,11 @@ interface IBox {
   fontSize?: string;
   border?: string;
   width?: string;
+  color?: string;
+  position?: string;
+  zIndex?: string | number;
+  bottom?: string | number;
+  top?: string | number;
 }
 
 const Box = styled.div<IBox>`
@@ -28,8 +33,13 @@ const Box = styled.div<IBox>`
   padding: ${({ padding }) => (padding ? padding : '0')};
   margin: ${({ margin }) => (margin ? margin : '0')};
   background-color: ${({ bgColor }) => (bgColor ? bgColor : 'none')};
+  color: ${({ color }) => (color ? color : 'inherit')};
   border: ${({ border }) => (border ? border : 'none')};
   width: ${({ width }) => (width ? width : 'auto')};
+  position: ${({ position }) => (position ? position : 'static')};
+  z-index: ${({ zIndex }) => (zIndex ? zIndex : 'auto')};
+  bottom: ${({ bottom }) => (bottom ? bottom : 'auto')};
+  top: ${({ top }) => (top ? top : 'auto')};
 `;
 
 export default Box;
