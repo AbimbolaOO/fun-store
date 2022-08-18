@@ -1,10 +1,13 @@
 import Router from './routes';
-// import AppLayout from './Layouts/AppLayout';
-// import ModalSection from './Sections/ModalSection';
+import ScrollToTop from './Components/ScrollToTop';
 
 function App() {
-  return <Router />;
-  // return <ModalSection />;
+  return (
+    <>
+      <ScrollToTop />
+      <Router />
+    </>
+  );
 }
 
 export default App;

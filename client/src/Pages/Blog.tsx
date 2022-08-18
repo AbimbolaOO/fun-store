@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import styled from '@emotion/styled';
 
+import Page from '../Components/Page';
 import Layout23 from '../Layouts/Layout23';
 import MainArticleSection from '../Sections/MainArticleSection';
 import ArchiveSection from '../Sections/ArchiveSection';
@@ -76,39 +77,41 @@ const Blog: React.FC = () => {
   }, [currentPage, totalItems]);
 
   return (
-    <Layout23>
-      <AboutLayout>
-        <MainContent>
-          {content.map((data) => (
-            <MainArticleSection
-              date={data.date}
-              imgSrc={data.imgSrc}
-              heading={data.heading}
-              articleSample={data.articleSample}
-              key={data.heading}
+    <Page title="WhyteShops | Blog">
+      <Layout23>
+        <AboutLayout>
+          <MainContent>
+            {content.map((data) => (
+              <MainArticleSection
+                date={data.date}
+                imgSrc={data.imgSrc}
+                heading={data.heading}
+                articleSample={data.articleSample}
+                key={data.heading}
+              />
+            ))}
+            <Pagination
+              totalItems={totalItems}
+              pageSize={2}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
             />
-          ))}
-          <Pagination
-            totalItems={totalItems}
-            pageSize={2}
-            currentPage={currentPage}
-            setCurrentPage={setCurrentPage}
-          />
-        </MainContent>
-        <Aside>
-          <SearchBar />
-          <RecentsSection />
-          <ArchiveSection />
-          <TagSection />
-          <div>
-            <Heading>Banner</Heading>
-            <Box bgColor="#efefef">
-              <img alt="banner" src="/static/svg/bagBanner.svg" />
-            </Box>
-          </div>
-        </Aside>
-      </AboutLayout>
-    </Layout23>
+          </MainContent>
+          <Aside>
+            <SearchBar />
+            <RecentsSection />
+            <ArchiveSection />
+            <TagSection />
+            <div>
+              <Heading>Banner</Heading>
+              <Box bgColor="#efefef">
+                <img alt="banner" src="/static/svg/bagBanner.svg" />
+              </Box>
+            </div>
+          </Aside>
+        </AboutLayout>
+      </Layout23>
+    </Page>
   );
 };
 

@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 
+import Page from '../Components/Page';
 import ViewComfyIcon from '@mui/icons-material/ViewComfy';
 import AppsIcon from '@mui/icons-material/Apps';
 import GridViewIcon from '@mui/icons-material/GridView';
@@ -53,7 +54,7 @@ const ContentFill = styled.div`
 
 const OnSale: React.FC = () => {
   return (
-    <>
+    <Page title="WhyteShops | On Sale">
       <Banner>
         <Label>
           <Title>On Sale</Title>
@@ -123,7 +124,7 @@ const OnSale: React.FC = () => {
           oldPrice="$221"
         />
       </ContentFill>
-    </>
+    </Page>
   );
 };
 

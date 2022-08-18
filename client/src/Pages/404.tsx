@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 import { Link as RouterLink } from 'react-router-dom';
 
+import Page from '../Components/Page';
+
 const MainContainer = styled.main`
   grid-column: 1/4;
   display: grid;
@@ -56,19 +58,21 @@ const ImageBox = styled.div`
 
 const NotFoundPage: React.FC = () => {
   return (
-    <MainContainer>
-      <ImageBox></ImageBox>
-      <TextContainer>
-        <LargeText>Oops!</LargeText>
-        <LargeText>Page not found!</LargeText>
-        <SmallText>
-          <div>PLEASE GO BACK TO</div>
-          <StyledRouterLinkSecoundaryWrapper to="/">
-            HOMEPAGE
-          </StyledRouterLinkSecoundaryWrapper>
-        </SmallText>
-      </TextContainer>
-    </MainContainer>
+    <Page title="WhyteShops | 404">
+      <MainContainer>
+        <ImageBox></ImageBox>
+        <TextContainer>
+          <LargeText>Oops!</LargeText>
+          <LargeText>Page not found!</LargeText>
+          <SmallText>
+            <div>PLEASE GO BACK TO</div>
+            <StyledRouterLinkSecoundaryWrapper to="/">
+              HOMEPAGE
+            </StyledRouterLinkSecoundaryWrapper>
+          </SmallText>
+        </TextContainer>
+      </MainContainer>
+    </Page>
   );
 };
 
