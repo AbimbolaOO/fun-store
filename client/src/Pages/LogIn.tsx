@@ -1,5 +1,6 @@
 import * as Yup from 'yup';
 
+import Page from '../Components/Page';
 import Layout23 from '../Layouts/Layout23';
 import Box from '../Components/Box';
 import Button from '../Components/Button';
@@ -30,21 +31,23 @@ const LogIn: React.FC = () => {
   };
 
   return (
-    <Layout23>
-      <FormComponent
-        initialValues={initialValues}
-        schema={schema}
-        onSubmit={onSubmit}
-      >
-        <FormField type="text" id="email" />
-        <FormField type="password" id="password" />
-        <Box justify="space-between">
-          <Button type="submit">SIGN IN</Button>
-          <BasicLink to="/">Forgot your password?</BasicLink>
-        </Box>
-        <BasicLink to="/account/register">Create account</BasicLink>
-      </FormComponent>
-    </Layout23>
+    <Page title="WhyteShops | Login">
+      <Layout23>
+        <FormComponent
+          initialValues={initialValues}
+          schema={schema}
+          onSubmit={onSubmit}
+        >
+          <FormField type="text" id="email" />
+          <FormField type="password" id="password" />
+          <Box justify="space-between">
+            <Button type="submit">SIGN IN</Button>
+            <BasicLink to="/">Forgot your password?</BasicLink>
+          </Box>
+          <BasicLink to="/account/register">Create account</BasicLink>
+        </FormComponent>
+      </Layout23>
+    </Page>
   );
 };
 

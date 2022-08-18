@@ -1,5 +1,6 @@
 import * as Yup from 'yup';
 
+import Page from '../Components/Page';
 import Layout23 from '../Layouts/Layout23';
 import Button from '../Components/Button';
 import { BasicLink } from '../Components/StyledLinks';
@@ -39,20 +40,22 @@ const Register = () => {
   };
 
   return (
-    <Layout23>
-      <FormComponent
-        initialValues={initialValues}
-        schema={schema}
-        onSubmit={onSubmit}
-      >
-        <FormField type="text" id="firstName" label={true} />
-        <FormField type="text" id="lastName" label={true} />
-        <FormField type="text" id="email" label={true} />
-        <FormField type="password" id="password" label={true} />
-        <Button type="submit">SIGN IN</Button>
-        <BasicLink to="/">Return to store</BasicLink>
-      </FormComponent>
-    </Layout23>
+    <Page title="WhyteShops | Register">
+      <Layout23>
+        <FormComponent
+          initialValues={initialValues}
+          schema={schema}
+          onSubmit={onSubmit}
+        >
+          <FormField type="text" id="firstName" label={true} />
+          <FormField type="text" id="lastName" label={true} />
+          <FormField type="text" id="email" label={true} />
+          <FormField type="password" id="password" label={true} />
+          <Button type="submit">SIGN IN</Button>
+          <BasicLink to="/">Return to store</BasicLink>
+        </FormComponent>
+      </Layout23>
+    </Page>
   );
 };
 

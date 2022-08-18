@@ -3,16 +3,17 @@ import styled from '@emotion/styled';
 import CloseIcon from '@mui/icons-material/Close';
 
 import ReactPlayer from 'react-player/youtube';
+import { useEffect } from 'react';
 
 interface IModalBackgroundWrapper {
   showVideo: boolean;
 }
 const ModalBackgroundWrapper = styled.div<IModalBackgroundWrapper>`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 210vh;
+  height: 100%;
   background-color: rgba(0, 0, 0, 80%);
   pointer-events: ${({ showVideo }) => (showVideo ? 'auto' : 'none')};
   display: ${({ showVideo }) => (showVideo ? 'static' : 'none')};

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 
+import Page from '../Components/Page';
 import Layout23 from '../Layouts/Layout23';
 import HomeScreenData from '../__mocks__/HomeScreenData';
 import FigureComponent from '../Components/FigureComponent';
@@ -36,21 +37,23 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <Layout23>
-      <HomePageLayout>
-        {HomeScreenData(smallDevice).map((data) => (
-          <FigureComponent
-            columnLineStart={data.columnLineStart}
-            span={data.span}
-            imgSrc={data.imgSrc}
-            key={data.id}
-            link={data.link}
-            title={data.title}
-            action={data.action}
-          />
-        ))}
-      </HomePageLayout>
-    </Layout23>
+    <Page title="WhyteShops | Home">
+      <Layout23>
+        <HomePageLayout>
+          {HomeScreenData(smallDevice).map((data) => (
+            <FigureComponent
+              columnLineStart={data.columnLineStart}
+              span={data.span}
+              imgSrc={data.imgSrc}
+              key={data.id}
+              link={data.link}
+              title={data.title}
+              action={data.action}
+            />
+          ))}
+        </HomePageLayout>
+      </Layout23>
+    </Page>
   );
 };
 

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styled from '@emotion/styled';
 import AddIcon from '@mui/icons-material/Add';
 
+import Page from '../Components/Page';
 import Layout23 from '../Layouts/Layout23';
 import VideoModalSection from '../Sections/VideoModalSection';
 import InfoCard from '../Components/InfoCard';
@@ -136,39 +137,41 @@ const About: React.FC = () => {
   };
 
   return (
-    <LayoutWrapper>
-      <HeadingText>Big dreams on a budget?</HeadingText>
-      <MainText>
-        We provide well-designed, functional, durable, affordable, and
-        sustainable home furnishing solutions to African millennials with big
-        dreams on a budget.
-      </MainText>
-      <ImageBox>
-        <PlayButtonContainer>
-          <PlayButtonImg src="/static/img/icon-play.png" onClick={onclick} />
-          <OurStory>Our Story</OurStory>
-        </PlayButtonContainer>
-      </ImageBox>
-      <BottonSection>
-        <Contact>
-          {infoData.map((data) => (
-            <InfoCard
-              key={data.label}
-              label={data.label}
-              content={data.content}
-            />
-          ))}
-        </Contact>
-        <LabelContentWrapper>
-          <Label>Learn more about WhyteShops in the video.</Label>
-          <Button>
-            <AddIcon sx={{ transition: 'all 0.5s', fontSize: '20px' }} />
-            Shop Now
-          </Button>
-        </LabelContentWrapper>
-      </BottonSection>
-      <VideoModalSection setShowVideo={setShowVideo} showVideo={showVideo} />
-    </LayoutWrapper>
+    <Page title="WhyteShops | About">
+      <LayoutWrapper>
+        <HeadingText>Big dreams on a budget?</HeadingText>
+        <MainText>
+          We provide well-designed, functional, durable, affordable, and
+          sustainable home furnishing solutions to African millennials with big
+          dreams on a budget.
+        </MainText>
+        <ImageBox>
+          <PlayButtonContainer>
+            <PlayButtonImg src="/static/img/icon-play.png" onClick={onclick} />
+            <OurStory>Our Story</OurStory>
+          </PlayButtonContainer>
+        </ImageBox>
+        <BottonSection>
+          <Contact>
+            {infoData.map((data) => (
+              <InfoCard
+                key={data.label}
+                label={data.label}
+                content={data.content}
+              />
+            ))}
+          </Contact>
+          <LabelContentWrapper>
+            <Label>Learn more about WhyteShops in the video.</Label>
+            <Button>
+              <AddIcon sx={{ transition: 'all 0.5s', fontSize: '20px' }} />
+              Shop Now
+            </Button>
+          </LabelContentWrapper>
+        </BottonSection>
+        <VideoModalSection setShowVideo={setShowVideo} showVideo={showVideo} />
+      </LayoutWrapper>
+    </Page>
   );
 };
 

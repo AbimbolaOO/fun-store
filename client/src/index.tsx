@@ -4,13 +4,16 @@ import { Global } from '@emotion/react';
 
 import App from './App';
 import GlobalStyles from './globalStyles';
+import { HelmetProvider } from 'react-helmet-async';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <BrowserRouter>
-    <Global styles={GlobalStyles} />
-    <App />
-  </BrowserRouter>
+  <HelmetProvider>
+    <BrowserRouter>
+      <Global styles={GlobalStyles} />
+      <App />
+    </BrowserRouter>
+  </HelmetProvider>
 );
