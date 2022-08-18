@@ -17,6 +17,7 @@ interface IFormField {
   type: string;
   id: string;
   label?: boolean;
+  touch?: boolean;
   error?: string | string[] | FormikErrors<any> | FormikErrors<any>[];
 
   onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined;
@@ -70,6 +71,7 @@ export const FormField: React.FC<IFormField> = ({
   id,
   onChange,
   error,
+  touch,
   label = false,
 }) => {
   return (
@@ -87,10 +89,8 @@ export const FormField: React.FC<IFormField> = ({
         id={id}
         onChange={onChange}
       ></Input>
-      {error ? (
+      {touch && error && (
         <FormError>{capitalizeFirstLetter(error as string)}</FormError>
-      ) : (
-        ''
       )}
     </Box>
   );
@@ -122,17 +122,20 @@ export const FormComponent: React.FC<IFormComponent> = ({
         validationSchema={schema}
         onSubmit={onSubmit}
       >
-        {({ errors, handleSubmit, handleChange }) => (
-          <FormWrapper onSubmit={handleSubmit}>
+        {({ errors, touched, handleSubmit, handleChange }) => (
+          <FormWrapper onSubmit={handleSubmit} autoComplete="off" noValidate>
             {React.Children.map(children, (child) => {
               const onChange = handleChange;
               let error = errors[''];
+              let touch = touched[''];
               if (child.props.id !== undefined) {
                 error = errors[`${child.props.id}`];
+                touch = touched[`${child.props.id}`];
               }
               const newChild = React.cloneElement(child, {
                 onChange,
                 error,
+                touch,
               });
               return newChild;
             })}
