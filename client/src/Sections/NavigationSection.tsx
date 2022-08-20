@@ -1,14 +1,15 @@
+import { useState } from 'react';
 import styled from '@emotion/styled';
 import { Link as RouterLink } from 'react-router-dom';
 
 import { HoverDropDown } from '../Components/HoverDropDown';
 import HamburgerMenu from '../Components/HamburgerMenu';
+import CartSection from '../Sections/CartSection';
+import SearchSeaction from '../Sections/SearchSeaction';
 // import AnimatingHambugerIcon from '../Components/AnimatingHambugerIcon';
-
 import {
   Search,
   Profile,
-  Love,
   Cart,
   HamburgerMenuIcon,
 } from '../Components/MenuIcons';
@@ -91,6 +92,10 @@ const LeftOptionalView = styled.div`
   }
 `;
 
+const IconWrapper = styled.div`
+  cursor: pointer;
+`;
+
 const shopDropDownOptions = [
   { label: 'Bed', path: '/' },
   { label: 'Sofas', path: '/' },
@@ -111,6 +116,17 @@ const menuOptions = [
 ];
 
 const NavigationSection: React.FC = () => {
+  const [showCart, setShowCart] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
+
+  const onClick = () => {
+    setShowCart(!showCart);
+  };
+
+  const onClickSearch = () => {
+    setShowSearch(!showSearch);
+  };
+
   return (
     <>
       <NavMenuSuperContainer>
@@ -152,18 +168,15 @@ const NavigationSection: React.FC = () => {
           </MenuListItem>
         </PageLinkContainer>
         <NavIconsGroup>
-          <RouterLink to="/">
+          <IconWrapper onClick={onClickSearch}>
             <Search />
-          </RouterLink>
+          </IconWrapper>
           <RouterLink to="/account/login">
             <Profile />
           </RouterLink>
-          <RouterLink to="/">
-            <Love />
-          </RouterLink>
-          <RouterLink to="/">
+          <IconWrapper onClick={onClick}>
             <Cart />
-          </RouterLink>
+          </IconWrapper>
           <RightOptionalView>
             <HamburgerMenu options={menuOptions}>
               <HamburgerMenuIcon />
@@ -171,6 +184,8 @@ const NavigationSection: React.FC = () => {
           </RightOptionalView>
         </NavIconsGroup>
       </NavMenuSuperContainer>
+      <SearchSeaction showSearch={showSearch} setShowSearch={setShowSearch} />
+      <CartSection showCart={showCart} setShowCart={setShowCart} />
     </>
   );
 };

@@ -1,9 +1,9 @@
+import { useEffect } from 'react';
 import ReactDom from 'react-dom';
 import styled from '@emotion/styled';
 import CloseIcon from '@mui/icons-material/Close';
 
 import ReactPlayer from 'react-player/youtube';
-import { useEffect } from 'react';
 
 interface IModalBackgroundWrapper {
   showVideo: boolean;
@@ -62,6 +62,17 @@ const VideoModalSection: React.FC<VideoModal> = ({
   setShowVideo,
   showVideo,
 }) => {
+  const modalRoot = document.getElementById('modal-root');
+  const modal = document.createElement('div');
+
+  useEffect(() => {
+    modalRoot!.appendChild(modal);
+    return () => {
+      modalRoot!.removeChild(modal);
+    };
+    // eslint-disable-next-line
+  }, [showVideo]);
+
   const onClick = () => {
     setShowVideo(!showVideo);
   };
@@ -90,7 +101,7 @@ const VideoModalSection: React.FC<VideoModal> = ({
         </ModalContent>
       </ModalBackground>
     </ModalBackgroundWrapper>,
-    document.getElementById('video-modal-root')!
+    modal
   );
 };
 
