@@ -58,7 +58,9 @@ const ContactsInfoSection = () => {
         <ContactSectionImg>
           <EmailIcon />
         </ContactSectionImg>
-        <ContactSectionBody>Mail: taeillo@taeillo.com</ContactSectionBody>
+        <ContactSectionBody>
+          Mail: abimbolaolayemiwhyte@gmail.com
+        </ContactSectionBody>
       </ContactTile>
       <ContactTile>
         <ContactSectionHeader>HOUR OF OPERATION</ContactSectionHeader>
