@@ -37,6 +37,8 @@ const LogIn: React.FC = () => {
           initialValues={initialValues}
           schema={schema}
           onSubmit={onSubmit}
+          title="Login"
+          description="Please login using account detail bellow."
         >
           <FormField type="text" id="email" />
           <FormField type="password" id="password" />

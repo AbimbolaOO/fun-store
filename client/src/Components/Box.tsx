@@ -18,6 +18,7 @@ interface IBox {
   zIndex?: string | number;
   bottom?: string | number;
   top?: string | number;
+  gridColumn?: string;
 }
 
 const Box = styled.div<IBox>`
@@ -40,6 +41,7 @@ const Box = styled.div<IBox>`
   z-index: ${({ zIndex }) => (zIndex ? zIndex : 'auto')};
   bottom: ${({ bottom }) => (bottom ? bottom : 'auto')};
   top: ${({ top }) => (top ? top : 'auto')};
+  grid-column: ${({ gridColumn }) => (gridColumn ? gridColumn : 'auto')};
 `;
 
 export default Box;

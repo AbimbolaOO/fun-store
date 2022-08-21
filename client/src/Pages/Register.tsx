@@ -46,6 +46,8 @@ const Register = () => {
           initialValues={initialValues}
           schema={schema}
           onSubmit={onSubmit}
+          title="Create Account"
+          description="Please Register using account detail bellow."
         >
           <FormField type="text" id="firstName" label={true} />
           <FormField type="text" id="lastName" label={true} />

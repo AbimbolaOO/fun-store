@@ -37,6 +37,12 @@ const CartContentWrapper = styled.div<ICartContentWrapper>`
   & > .cartArea {
     transform: translateX(calc(100% - 380px));
   }
+
+  @media screen and (max-width: 480px) {
+    & > .cartArea {
+      transform: translateX(calc(100% - 300px));
+    }
+  }
 `;
 
 const CartArea = styled.div`
@@ -44,6 +50,7 @@ const CartArea = styled.div`
   height: 100vh;
   background-color: white;
   float: right;
+  right: 0px;
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -52,6 +59,10 @@ const CartArea = styled.div`
   position: relative;
   transform: translateX(calc(100%));
   transition: transform 0.3s ease-in;
+
+  @media screen and (max-width: 480px) {
+    width: 300px;
+  }
 `;
 
 const CartText = styled.div`
