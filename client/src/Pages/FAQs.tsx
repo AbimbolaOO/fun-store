@@ -7,7 +7,7 @@ const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   color: #535454;
-  padding-top: 10vh;
+  padding: 10vh 0 5vh;
 
   & div {
     display: flex;

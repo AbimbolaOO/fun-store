@@ -88,7 +88,12 @@ const SearchSeaction: React.FC<ISearchSeaction> = ({
     <SearchContentWrapper showSearch={showSearch}>
       <SearchSlider className={isActive ? 'slider' : ''}>
         <CloseIconWrapper onClick={onClick} />
-        <SearchBar fontSize="3.5rem" bgSize="2rem" placeHolderColor="#e4e4e2" />
+        <SearchBar
+          fontSize="3.5rem"
+          bgSize="2rem"
+          placeHolderColor="#e4e4e2"
+          fullScreen
+        />
       </SearchSlider>
     </SearchContentWrapper>,
     modalRoot!
