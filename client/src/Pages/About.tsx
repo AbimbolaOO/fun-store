@@ -132,7 +132,7 @@ const LabelContentWrapper = styled.div`
 const About: React.FC = () => {
   const [showVideo, setShowVideo] = useState<boolean>(false);
 
-  const onclick = () => {
+  const onClick = () => {
     setShowVideo(!showVideo);
   };
 
@@ -147,7 +147,7 @@ const About: React.FC = () => {
         </MainText>
         <ImageBox>
           <PlayButtonContainer>
-            <PlayButtonImg src="/static/img/icon-play.png" onClick={onclick} />
+            <PlayButtonImg src="/static/img/icon-play.png" onClick={onClick} />
             <OurStory>Our Story</OurStory>
           </PlayButtonContainer>
         </ImageBox>
