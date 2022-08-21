@@ -43,7 +43,7 @@ const SearchSlider = styled.div`
   height: 100%;
   background-color: white;
   display: grid;
-  padding: 0 20vw;
+  padding: 0 15vw;
   align-items: center;
   right: 0;
   transform: translateX(calc(100%));
@@ -88,7 +88,7 @@ const SearchSeaction: React.FC<ISearchSeaction> = ({
     <SearchContentWrapper showSearch={showSearch}>
       <SearchSlider className={isActive ? 'slider' : ''}>
         <CloseIconWrapper onClick={onClick} />
-        <SearchBar fontSize="4rem" bgSize="2rem" placeHolderColor="#e4e4e2" />
+        <SearchBar fontSize="3.5rem" bgSize="2rem" placeHolderColor="#e4e4e2" />
       </SearchSlider>
     </SearchContentWrapper>,
     modalRoot!

@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import ReactDom from 'react-dom';
 import styled from '@emotion/styled';
 import CloseIcon from '@mui/icons-material/Close';
@@ -63,15 +62,6 @@ const VideoModalSection: React.FC<VideoModal> = ({
   showVideo,
 }) => {
   const modalRoot = document.getElementById('modal-root');
-  const modal = document.createElement('div');
-
-  useEffect(() => {
-    modalRoot!.appendChild(modal);
-    return () => {
-      modalRoot!.removeChild(modal);
-    };
-    // eslint-disable-next-line
-  }, [showVideo]);
 
   const onClick = () => {
     setShowVideo(!showVideo);
@@ -101,7 +91,7 @@ const VideoModalSection: React.FC<VideoModal> = ({
         </ModalContent>
       </ModalBackground>
     </ModalBackgroundWrapper>,
-    modal
+    modalRoot!
   );
 };
 
