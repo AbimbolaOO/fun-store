@@ -1,6 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from '@emotion/styled';
 
+import WestIcon from '@mui/icons-material/West';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+
 import Box from './Box';
 import { BasicLink } from '../Components/StyledLinks';
 
@@ -8,10 +11,14 @@ interface IOption {
   label: string;
   path: string;
 }
+interface IOptions {
+  mainMenu: IOption[];
+  shop: IOption[];
+}
 
 interface IHamburgerMenu {
   children: React.ReactNode;
-  options: IOption[];
+  options: IOptions;
 }
 
 const DropDownContainer = styled.div`
@@ -20,7 +27,6 @@ const DropDownContainer = styled.div`
   position: relative;
   cursor: pointer;
   color: #535454;
-  /* border: 2px solid blue; */
 
   & > .active {
     opacity: 1;
@@ -60,16 +66,85 @@ const DropBoxItem = styled.div`
     background-color: black;
   }
 `;
+interface IMenu {
+  options: any;
+  isActive: boolean;
+}
+
+export const Menu: React.FC<IMenu> = ({ options, isActive }) => {
+  const [option, setOption] = useState(options[0]);
+  const [subMenuHeader, setSubMenuHeader] = useState(false);
+
+  useEffect(() => {
+    if (Object.keys(option).length === 7) {
+      setSubMenuHeader(true);
+    } else {
+      setSubMenuHeader(false);
+    }
+  }, [option]);
+
+  useEffect(() => {
+    if (!isActive) {
+      setOption(options[0]);
+    }
+  }, [isActive, options]);
+
+  return (
+    <>
+      {subMenuHeader ? (
+        <Box
+          direction="column"
+          color="black"
+          gap="1px"
+          onClick={() => setOption(options[0])}
+        >
+          <BasicLink to="/collections">
+            <DropBoxItem> Shop</DropBoxItem>
+          </BasicLink>
+          <DropBoxItem className="menu-change">
+            <Box width="100%" justify="space-between" className="menu-change">
+              <WestIcon className="menu-change" />
+              <Box className="menu-change">Back</Box>
+            </Box>
+          </DropBoxItem>
+        </Box>
+      ) : (
+        ''
+      )}
+
+      {option.map((option: IOption) => {
+        return option.label === 'Shop' ? (
+          <DropBoxItem
+            key={option.label}
+            onClick={() => setOption(options[1])}
+            className="menu-change"
+          >
+            <Box width="100%" justify="space-between" className="menu-change">
+              <Box className="menu-change">Shop</Box>
+              <NavigateNextIcon className="menu-change" />
+            </Box>
+          </DropBoxItem>
+        ) : (
+          <BasicLink to={option.path} key={option.label}>
+            <DropBoxItem>{option.label}</DropBoxItem>
+          </BasicLink>
+        );
+      })}
+    </>
+  );
+};
 
 const HamburgerMenu: React.FC<IHamburgerMenu> = ({ children, options }) => {
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const dropBoxRef = useRef<HTMLDivElement>(null);
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
-    const pageClickEvent = (e: Event) => {
+    const pageClickEvent = (e: any) => {
       if (
         dropdownRef.current !== null &&
-        !dropdownRef.current.contains(e.target as Element)
+        !dropdownRef.current.contains(e.target as Element) &&
+        !e.target.classList.contains('menu-change')
       ) {
         setIsActive(!isActive);
       }
@@ -84,19 +159,19 @@ const HamburgerMenu: React.FC<IHamburgerMenu> = ({ children, options }) => {
     };
   }, [isActive]);
 
-  const onClick = () => setIsActive(!isActive);
+  const onClick = (e: any) => {
+    if (!e.target.classList.contains('menu-change')) {
+      setIsActive(!isActive);
+    }
+  };
 
   return (
     <DropDownContainer ref={dropdownRef} onClick={onClick}>
       <Box align="center" justify="center">
-        {children}{' '}
+        {children}
       </Box>
-      <DropBox className={isActive ? 'active' : ''}>
-        {options.map((option: IOption) => (
-          <BasicLink to={option.path} key={option.label}>
-            <DropBoxItem>{option.label}</DropBoxItem>
-          </BasicLink>
-        ))}
+      <DropBox ref={dropBoxRef} className={isActive ? 'active' : ''}>
+        <Menu options={Object.values(options)} isActive={isActive} />
       </DropBox>
     </DropDownContainer>
   );

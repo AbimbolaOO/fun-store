@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styled from '@emotion/styled';
 import { Link as RouterLink } from 'react-router-dom';
 
@@ -27,6 +27,24 @@ const PageLinkContainer = styled.ul`
 const NavIconsGroup = styled.div`
   display: flex;
   gap: 20px;
+`;
+
+const NavMenuSuperContainerWrapper = styled.div`
+  display: grid;
+  grid-column: 1/4;
+  grid-template-columns: 1fr 26fr 1fr;
+  background-color: white;
+
+  @media screen and (max-width: 1200px) {
+    grid-template-columns: 1fr 8fr 1fr;
+  }
+
+  &.sticky {
+    position: sticky;
+    z-index: 2;
+    top: 0;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 4px 8px;
+  }
 `;
 
 const NavMenuSuperContainer = styled.div`
@@ -116,8 +134,22 @@ const menuOptions = [
 ];
 
 const NavigationSection: React.FC = () => {
+  const stickyRef = useRef<HTMLDivElement>(null);
   const [showCart, setShowCart] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
+
+  useEffect(() => {
+    const topheader = document.querySelector('.top-header');
+    const options = {
+      rootMargin: '60px',
+    };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        stickyRef.current!.classList.toggle('sticky', !entry.isIntersecting);
+      });
+    }, options);
+    observer.observe(topheader!);
+  }, [stickyRef]);
 
   const onClick = () => {
     setShowCart(!showCart);
@@ -128,7 +160,7 @@ const NavigationSection: React.FC = () => {
   };
 
   return (
-    <>
+    <NavMenuSuperContainerWrapper ref={stickyRef} className="nav-bar">
       <NavMenuSuperContainer>
         <LeftOptionalView>
           <HamburgerMenuIcon />
@@ -178,7 +210,9 @@ const NavigationSection: React.FC = () => {
             <Cart />
           </IconWrapper>
           <RightOptionalView>
-            <HamburgerMenu options={menuOptions}>
+            <HamburgerMenu
+              options={{ mainMenu: menuOptions, shop: shopDropDownOptions }}
+            >
               <HamburgerMenuIcon />
             </HamburgerMenu>
           </RightOptionalView>
@@ -186,7 +220,7 @@ const NavigationSection: React.FC = () => {
       </NavMenuSuperContainer>
       <SearchSeaction showSearch={showSearch} setShowSearch={setShowSearch} />
       <CartSection showCart={showCart} setShowCart={setShowCart} />
-    </>
+    </NavMenuSuperContainerWrapper>
   );
 };
 

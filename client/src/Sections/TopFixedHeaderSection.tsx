@@ -55,7 +55,7 @@ const options = [
 
 const TopFixedHeaderSection: React.FC = () => {
   return (
-    <FixHeader>
+    <FixHeader className="top-header">
       <FixHeaderRightContent>
         <SelectMenu options={options}>NGN</SelectMenu>
         <VerticalLine />
