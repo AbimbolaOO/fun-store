@@ -7,6 +7,7 @@ import Blog from './Pages/Blog';
 import Shop from './Pages/Shop';
 import OnSale from './Pages/OnSale';
 import LogIn from './Pages/LogIn';
+import ResetPassword from './Pages/ResetPassword';
 import Register from './Pages/Register';
 import NotFoundPage from './Pages/404';
 import AppLayout from './Layouts/AppLayout';
@@ -34,6 +35,7 @@ export default function Router() {
       children: [
         { path: 'login', element: <LogIn /> },
         { path: 'register', element: <Register /> },
+        { path: 'reset/:uuid', element: <ResetPassword /> },
         { path: '*', element: <Navigate to="/404" replace /> },
       ],
     },

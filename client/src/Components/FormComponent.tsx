@@ -70,6 +70,16 @@ export const FieldBox = styled(Box)<IFieldBox>`
 
 const FormHeaderText = styled.div`
   font-size: 2rem;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.7rem;
+  }
+`;
+
+const WrappedTertiaryText = styled(TertiaryText)`
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 const Input = styled.input`
@@ -241,9 +251,9 @@ export const FormComponent: React.FC<IFormComponent> = ({
     >
       <Box direction="column" textAlign="center">
         <FormHeaderText>{title}</FormHeaderText>
-        <TertiaryText justify="center" paddingTop="0px">
+        <WrappedTertiaryText justify="center" paddingTop="0px">
           {description}
-        </TertiaryText>
+        </WrappedTertiaryText>
       </Box>
       <Formik
         initialValues={initialValues}

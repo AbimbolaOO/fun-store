@@ -49,10 +49,10 @@ const Register = () => {
           title="Create Account"
           description="Please Register using account detail bellow."
         >
-          <FormField type="text" id="firstName" label={true} />
-          <FormField type="text" id="lastName" label={true} />
-          <FormField type="text" id="email" label={true} />
-          <FormField type="password" id="password" label={true} />
+          <FormField type="text" id="firstName" label />
+          <FormField type="text" id="lastName" label />
+          <FormField type="text" id="email" label />
+          <FormField type="password" id="password" label />
           <Button type="submit">SIGN IN</Button>
           <BasicLink to="/">Return to store</BasicLink>
         </FormComponent>
