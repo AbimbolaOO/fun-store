@@ -12,7 +12,9 @@ const Button = styled.button`
   gap: 8px;
   background-color: #313131;
   color: white;
+  cursor: pointer;
   transition: all 0.5s;
+
   & > * {
     color: white;
   }
