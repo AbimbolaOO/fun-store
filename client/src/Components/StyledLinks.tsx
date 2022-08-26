@@ -26,7 +26,6 @@ export const StyledRouterLinkSecoundary = styled(RouterLink)`
 
 export const LinkToArticle = styled(RouterLink)<ILinkToArticle>`
   text-decoration: none;
-  /* border: 2px solid rebeccapurple; */
   display: inline-block;
   position: relative;
   color: ${({ color }) => (color ? color : 'black')};
@@ -115,5 +114,43 @@ export const BasicLink = styled(RouterLink)`
 
   @media screen and (max-width: 450px) {
     font-size: 0.8rem;
+  }
+`;
+
+export const StyledRouterLink = styled(RouterLink)`
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  color: #535454;
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #424141;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+  &:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  &:link {
+    color: #535454;
+  }
+  &:visited {
+    color: #535454;
+  }
+  &:hover {
+    color: #272626;
+  }
+  &:active {
+    color: #535454;
   }
 `;
