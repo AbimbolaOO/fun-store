@@ -22,6 +22,7 @@ const Shop: React.FC = () => {
         <ShopLayoutWrapper>
           {ShopData.map((data) => (
             <ItemSection
+              key={data.sectionTitle}
               sectionTitle={data.sectionTitle}
               sectionData={data.sectionData}
             />
