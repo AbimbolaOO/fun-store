@@ -46,8 +46,9 @@ const ItemSection: React.FC<IItemSection> = ({ sectionTitle, sectionData }) => {
         </Box>
       </SectionTitle>
       <ItemComponentWrapper>
-        {sectionData.map((data) => (
+        {sectionData.map((data, index) => (
           <ItemComponent
+            key={data.title + index}
             imgSrc={data.imgSrc}
             imgSrc2={data.imgSrc2}
             title={data.title}

@@ -82,7 +82,7 @@ const VideoModalSection: React.FC<VideoModal> = ({
           />
           <IframeWrapper>
             <ReactPlayer
-              url="https://www.youtube.com/watch?v=CQLsdm1ZYAw"
+              url="https://www.youtube.com/embed/CQLsdm1ZYAw"
               playing={showVideo}
               controls
               title="About us"
