@@ -19,6 +19,7 @@ interface IBox {
   bottom?: string | number;
   top?: string | number;
   gridColumn?: string;
+  cursor?: string;
 }
 
 const Box = styled.div<IBox>`
@@ -42,6 +43,7 @@ const Box = styled.div<IBox>`
   bottom: ${({ bottom }) => (bottom ? bottom : 'auto')};
   top: ${({ top }) => (top ? top : 'auto')};
   grid-column: ${({ gridColumn }) => (gridColumn ? gridColumn : 'auto')};
+  cursor: ${({ cursor }) => (cursor ? cursor : 'default')};
 `;
 
 export default Box;

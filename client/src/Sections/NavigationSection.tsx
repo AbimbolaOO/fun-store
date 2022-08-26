@@ -4,6 +4,7 @@ import { Link as RouterLink } from 'react-router-dom';
 
 import { HoverDropDown } from '../Components/HoverDropDown';
 import HamburgerMenu from '../Components/HamburgerMenu';
+import { StyledRouterLink } from '../Components/StyledLinks';
 import CartSection from '../Sections/CartSection';
 import SearchSeaction from '../Sections/SearchSeaction';
 // import AnimatingHambugerIcon from '../Components/AnimatingHambugerIcon';
@@ -43,7 +44,7 @@ const NavMenuSuperContainerWrapper = styled.div`
     position: sticky;
     z-index: 2;
     top: 0;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 4px 8px;
+    box-shadow: rgba(144, 144, 144, 0.24) 0px 4px 8px;
   }
 `;
 
@@ -58,44 +59,6 @@ const NavMenuSuperContainer = styled.div`
 
 const MenuListItem = styled.li`
   cursor: pointer;
-`;
-
-const StyledRouterLink = styled(RouterLink)`
-  text-decoration: none;
-  display: inline-block;
-  position: relative;
-  color: #535454;
-
-  &:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 1px;
-    bottom: 0;
-    left: 0;
-    background-color: #424141;
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-  }
-
-  &:hover:after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-  }
-
-  &:link {
-    color: #535454;
-  }
-  &:visited {
-    color: #535454;
-  }
-  &:hover {
-    color: #272626;
-  }
-  &:active {
-    color: #535454;
-  }
 `;
 
 const RightOptionalView = styled.div`
