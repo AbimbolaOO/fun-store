@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 
 import Box from '../Components/Box';
-import HorizontalLine from '../Components/HorzontalLine';
 import Heading from '../Components/Heading';
-import TertiaryText from '../Components/TertiaryText';
+import HorizontalLine from '../Components/HorzontalLine';
 import { LinkToArticle } from '../Components/StyledLinks';
+import TertiaryText from '../Components/TertiaryText';
 
 const Img = styled.img`
   width: 100px;

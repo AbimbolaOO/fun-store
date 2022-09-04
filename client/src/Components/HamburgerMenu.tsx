@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
+
 import styled from '@emotion/styled';
-
-import WestIcon from '@mui/icons-material/West';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import WestIcon from '@mui/icons-material/West';
 
-import Box from './Box';
 import { BasicLink } from '../Components/StyledLinks';
+import Box from './Box';
 
 interface IOption {
   label: string;

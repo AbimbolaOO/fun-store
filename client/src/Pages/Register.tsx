@@ -1,11 +1,10 @@
 import * as Yup from 'yup';
 
-import Page from '../Components/Page';
-import Layout23 from '../Layouts/Layout23';
 import Button from '../Components/Button';
-import { BasicLink } from '../Components/StyledLinks';
-
 import { FormComponent, FormField } from '../Components/FormComponent';
+import Page from '../Components/Page';
+import { BasicLink } from '../Components/StyledLinks';
+import Layout23 from '../Layouts/Layout23';
 
 const Register = () => {
   const schema = Yup.object().shape({

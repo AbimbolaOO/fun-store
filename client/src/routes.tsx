@@ -1,16 +1,17 @@
 import { Navigate, useRoutes } from 'react-router-dom';
-import Home from './Pages/Home';
-import Contacts from './Pages/Contacts';
-import FAQs from './Pages/FAQs';
+
+import AppLayout from './Layouts/AppLayout';
+import NotFoundPage from './Pages/404';
 import About from './Pages/About';
 import Blog from './Pages/Blog';
-import Shop from './Pages/Shop';
-import OnSale from './Pages/OnSale';
+import Contacts from './Pages/Contacts';
+import FAQs from './Pages/FAQs';
+import Home from './Pages/Home';
 import LogIn from './Pages/LogIn';
-import ResetPassword from './Pages/ResetPassword';
+import OnSale from './Pages/OnSale';
 import Register from './Pages/Register';
-import NotFoundPage from './Pages/404';
-import AppLayout from './Layouts/AppLayout';
+import ResetPassword from './Pages/ResetPassword';
+import Shop from './Pages/Shop';
 
 export default function Router() {
   return useRoutes([

@@ -1,10 +1,9 @@
 import * as Yup from 'yup';
 
+import Button from '../Components/Button';
+import { FormComponent, FormField } from '../Components/FormComponent';
 import Page from '../Components/Page';
 import Layout23 from '../Layouts/Layout23';
-import Button from '../Components/Button';
-
-import { FormComponent, FormField } from '../Components/FormComponent';
 
 const ResetPassword: React.FC = () => {
   const schema = Yup.object().shape({

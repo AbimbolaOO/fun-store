@@ -1,9 +1,8 @@
+import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 
-import Box from '../Components/Box';
-import { useTheme } from '@emotion/react';
-
 import ArchivePost from '../__mocks__/ArchivePost';
+import Box from '../Components/Box';
 import { LinkToArticle } from '../Components/StyledLinks';
 
 const Heading = styled.div`

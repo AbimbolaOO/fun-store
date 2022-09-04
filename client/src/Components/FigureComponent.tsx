@@ -1,5 +1,7 @@
 import { useState } from 'react';
+
 import styled from '@emotion/styled';
+
 import { ImgInfoTitleAction } from '../Components/StyledLinks';
 
 interface IFigureComponent {

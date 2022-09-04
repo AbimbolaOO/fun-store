@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import Layout23 from '../Layouts/Layout23';
 
-import Page from '../Components/Page';
-import ItemSection from '../Sections/ItemSection';
 import ShopData from '../__mocks__/ShopData';
+import Page from '../Components/Page';
+import Layout23 from '../Layouts/Layout23';
+import ItemSection from '../Sections/ItemSection';
 
 const ShopLayoutWrapper = styled.div`
   display: grid;

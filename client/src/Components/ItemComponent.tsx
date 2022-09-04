@@ -1,8 +1,9 @@
-import styled from '@emotion/styled';
 import { Link as RouterLink } from 'react-router-dom';
+
+import styled from '@emotion/styled';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import SearchIcon from '@mui/icons-material/Search';
 import MultipleStopIcon from '@mui/icons-material/MultipleStop';
+import SearchIcon from '@mui/icons-material/Search';
 
 export interface IItemComponent {
   imgSrc: string;

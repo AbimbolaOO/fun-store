@@ -1,16 +1,9 @@
 import styled from '@emotion/styled';
 
-import {
-  Discovery,
-  Maestro,
-  Master,
-  Opay,
-  Paypal,
-  Visa,
-} from '../Components/PaymentsVendorIcons';
+import Box from '../Components/Box';
+import { Discovery, Maestro, Master, Opay, Paypal, Visa } from '../Components/PaymentsVendorIcons';
 import SocialIconsGroup from '../Components/SocialIconsGroup';
 import { StyledRouterLinkSecoundary } from '../Components/StyledLinks';
-import Box from '../Components/Box';
 
 const FooterLinksGroup = styled.ul`
   display: flex;

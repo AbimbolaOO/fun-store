@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import ReactDom from 'react-dom';
+
 import styled from '@emotion/styled';
+import CloseIcon from '@mui/icons-material/Close';
 
 import HorzontalLine from '../Components/HorzontalLine';
-import CloseIcon from '@mui/icons-material/Close';
 
 interface ICartContentWrapper {
   showCart: boolean;

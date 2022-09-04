@@ -1,12 +1,7 @@
 import * as Yup from 'yup';
 
-import {
-  FormComponent,
-  FormField,
-  Textarea,
-  FieldBox,
-} from '../../Components/FormComponent';
 import Button from '../../Components/Button';
+import { FieldBox, FormComponent, FormField, Textarea } from '../../Components/FormComponent';
 
 function ContactsFormSection() {
   const schema = Yup.object().shape({

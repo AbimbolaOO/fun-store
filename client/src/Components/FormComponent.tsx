@@ -1,8 +1,9 @@
+import { Form, Formik, FormikErrors } from 'formik';
 import React from 'react';
-import styled from '@emotion/styled';
-import { Formik, Form, FormikErrors } from 'formik';
-import { capitalizeFirstLetter, splitOnCapitalLetter } from '../utils';
 
+import styled from '@emotion/styled';
+
+import { capitalizeFirstLetter, splitOnCapitalLetter } from '../utils';
 import Box from './Box';
 import TertiaryText from './TertiaryText';
 

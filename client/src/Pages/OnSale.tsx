@@ -1,11 +1,12 @@
 import { useState } from 'react';
+
 import styled from '@emotion/styled';
 
-import Page from '../Components/Page';
+import FilterBox from '../Components/FilterBox';
 import HorzontalLine from '../Components/HorzontalLine';
 import ItemComponent from '../Components/ItemComponent';
+import Page from '../Components/Page';
 import SortComponent from '../Components/SortComponent';
-import FilterBox from '../Components/FilterBox';
 
 const Banner = styled.div`
   grid-column: 1 / span 3;
