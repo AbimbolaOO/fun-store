@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import styled from '@emotion/styled';
+import { useTheme } from '@emotion/react';
 
 import Page from '../Components/Page';
 import Layout23 from '../Layouts/Layout23';
@@ -62,6 +63,7 @@ const MainContent = styled.main`
 `;
 
 const Blog: React.FC = () => {
+  const theme = useTheme();
   const [content, setContent] = useState<IBlogPost[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalItems, setTotalItems] = useState(0);
@@ -104,7 +106,7 @@ const Blog: React.FC = () => {
             <TagSection />
             <div>
               <Heading>Banner</Heading>
-              <Box bgColor="#efefef">
+              <Box bgColor={theme.palette.bgColor}>
                 <img alt="banner" src="/static/svg/bagBanner.svg" />
               </Box>
             </div>

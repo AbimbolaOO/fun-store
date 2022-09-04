@@ -10,22 +10,22 @@ const Button = styled.button`
   justify-content: center;
   align-items: center;
   gap: 8px;
-  background-color: #313131;
-  color: white;
+  background-color: ${({ theme }) => theme.palette.btnBgColor};
+  color: ${({ theme }) => theme.palette.bgColor};
   cursor: pointer;
   transition: all 0.5s;
 
   & > * {
-    color: white;
+    color: ${({ theme }) => theme.palette.bgColor};
   }
 
   &:hover {
-    color: #535454;
-    background-color: white;
+    color: ${({ theme }) => theme.palette.hoverColor};
+    background-color: ${({ theme }) => theme.palette.bgColor};
   }
 
   &:hover > * {
-    color: #535454;
+    color: ${({ theme }) => theme.palette.hoverColor};
   }
 
   @media screen and (max-width: 450px) {

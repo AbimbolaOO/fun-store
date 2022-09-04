@@ -20,7 +20,7 @@ const DropDownContainer = styled.div`
   flex-direction: column;
   position: relative;
   cursor: pointer;
-  color: #535454;
+  color: ${({ theme }) => theme.palette.primaryTextColor};
 
   &:hover > .dropBox {
     opacity: 1;

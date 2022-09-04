@@ -14,7 +14,7 @@ const DateWrapper = styled.div`
 `;
 
 const ArticleSample = styled.div`
-  color: #535454;
+  color: ${({ theme }) => theme.palette.primaryTextColor};
 `;
 
 const MainArticleSection: React.FC<IBlogPost> = ({

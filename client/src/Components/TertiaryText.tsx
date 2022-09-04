@@ -11,7 +11,7 @@ const TertiaryText = styled.div<ITertiaryText>`
   align-items: center;
   justify-content: ${({ justify }) => (justify ? justify : 'flex-start')};
   gap: 5px;
-  color: #535454;
+  color: ${({ theme }) => theme.palette.primaryTextColor};
 `;
 
 export default TertiaryText;

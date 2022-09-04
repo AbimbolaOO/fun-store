@@ -65,7 +65,7 @@ const InputFullSize = styled.input<ISearchBar>`
 
   &::placeholder {
     font-size: 4rem;
-    color: #dbdbdb;
+    color: ${({ theme }) => theme.palette.placeHolderColorSecondary};
   }
 
   @media screen and (max-width: 960px) {

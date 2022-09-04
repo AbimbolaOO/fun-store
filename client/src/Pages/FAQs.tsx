@@ -6,7 +6,7 @@ import Layout23 from '../Layouts/Layout23';
 const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  color: #535454;
+  color: ${({ theme }) => theme.palette.primaryTextColor};
   padding: 10vh 0 5vh;
 
   & div {

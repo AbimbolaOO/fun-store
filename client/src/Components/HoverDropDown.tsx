@@ -35,7 +35,7 @@ const DropDownContentWrapper = styled.div`
 const DropDownListContent = styled.div`
   display: grid;
   width: 12rem;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.palette.bgColor};
   box-shadow: 1px 1px 10px 2px rgba(218, 222, 223, 0.377);
   padding: 20px 0px;
 `;

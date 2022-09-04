@@ -16,7 +16,7 @@ const FilterBoxWrapper = styled.div`
   width: 100%;
   height: 0px;
   box-shadow: rgba(144, 144, 144, 0.24) 0px 4px 8px;
-  background-color: white;
+  background-color: ${({ theme }) => theme.palette.bgColor};
   display: grid;
   grid-template-columns: 1fr 8fr 1fr;
   overflow-y: auto;

@@ -34,7 +34,7 @@ const MainText = styled.div`
   grid-column: 3 / span 1;
   font-size: 1rem;
   text-align: center;
-  color: #535454;
+  color: ${({ theme }) => theme.palette.primaryTextColor};
 
   @media screen and (max-width: 1200px) {
     grid-column: 2 / span 3;
@@ -100,7 +100,7 @@ const PlayButtonImg = styled.img`
 
 const OurStory = styled.div`
   font-size: 3rem;
-  color: white;
+  color: ${({ theme }) => theme.palette.bgColor};
   letter-spacing: 10px;
 `;
 
@@ -120,7 +120,7 @@ const infoData = [
 ];
 
 const Label = styled.div`
-  color: #535454;
+  color: ${({ theme }) => theme.palette.primaryTextColor};
 `;
 
 const LabelContentWrapper = styled.div`
