@@ -1,6 +1,6 @@
 import IconGroup from './IconGroup';
+import { Facebook, Instagram, Linkedin, Twitter, Youtube } from './SocialIcons';
 import VerticalLine from './VerticalLine';
-import { Facebook, Linkedin, Twitter, Instagram, Youtube } from './SocialIcons';
 
 interface ISocialIconsGroup {
   noVerticalLine?: boolean;

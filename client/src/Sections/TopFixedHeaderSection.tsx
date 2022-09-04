@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 
-import VerticalLine from '../Components/VerticalLine';
-import SocialIconsGroup from '../Components/SocialIconsGroup';
 import SelectMenu from '../Components/SelectMenu';
+import SocialIconsGroup from '../Components/SocialIconsGroup';
+import VerticalLine from '../Components/VerticalLine';
 
 const FixHeader = styled.div`
   grid-column: 2/3;

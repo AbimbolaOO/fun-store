@@ -1,8 +1,8 @@
 import ReactDom from 'react-dom';
+import ReactPlayer from 'react-player/youtube';
+
 import styled from '@emotion/styled';
 import CloseIcon from '@mui/icons-material/Close';
-
-import ReactPlayer from 'react-player/youtube';
 
 interface IModalBackgroundWrapper {
   showVideo: boolean;

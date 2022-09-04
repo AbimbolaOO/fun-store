@@ -1,10 +1,7 @@
 import styled from '@emotion/styled';
 
 import Box from '../Components/Box';
-import {
-  StyledRouterLink,
-  StyledRouterLinkSecoundary,
-} from '../Components/StyledLinks';
+import { StyledRouterLink, StyledRouterLinkSecoundary } from '../Components/StyledLinks';
 import SearchBar from './SearchBar';
 
 interface IFilterBox {

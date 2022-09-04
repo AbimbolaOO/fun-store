@@ -1,13 +1,12 @@
 import { useState } from 'react';
 import * as Yup from 'yup';
 
-import Page from '../Components/Page';
-import Layout23 from '../Layouts/Layout23';
 import Box from '../Components/Box';
 import Button from '../Components/Button';
-import { BasicLink } from '../Components/StyledLinks';
-
 import { FormComponent, FormField } from '../Components/FormComponent';
+import Page from '../Components/Page';
+import { BasicLink } from '../Components/StyledLinks';
+import Layout23 from '../Layouts/Layout23';
 
 const LogIn: React.FC = () => {
   const [toggleView, setToggleView] = useState(true);

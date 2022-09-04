@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 
-import Page from '../Components/Page';
 import Box from '../Components/Box';
+import Page from '../Components/Page';
 import Layout23 from '../Layouts/Layout23';
-import ContactsInfoSection from '../Sections/contacts/ContactsInfoSection';
 import ContactsFormSection from '../Sections/contacts/ContactsFormSection';
+import ContactsInfoSection from '../Sections/contacts/ContactsInfoSection';
 
 const ContactLayout = styled(Box)`
   @media screen and (min-width: 1200px) {

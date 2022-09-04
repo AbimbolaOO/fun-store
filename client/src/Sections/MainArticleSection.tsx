@@ -1,13 +1,12 @@
 import styled from '@emotion/styled';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import AddIcon from '@mui/icons-material/Add';
-
-import Box from '../Components/Box';
-import TertiaryText from '../Components/TertiaryText';
-import Heading from '../Components/Heading';
-import { AnimatedIconLink } from '../Components/StyledLinks';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
 import { IBlogPost } from '../__mocks__/BlogPost';
+import Box from '../Components/Box';
+import Heading from '../Components/Heading';
+import { AnimatedIconLink } from '../Components/StyledLinks';
+import TertiaryText from '../Components/TertiaryText';
 
 const DateWrapper = styled.div`
   padding-left: 16px;

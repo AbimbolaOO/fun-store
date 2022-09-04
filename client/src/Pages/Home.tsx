@@ -1,10 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
 import styled from '@emotion/styled';
 
-import Page from '../Components/Page';
-import Layout23 from '../Layouts/Layout23';
 import HomeScreenData from '../__mocks__/HomeScreenData';
 import FigureComponent from '../Components/FigureComponent';
+import Page from '../Components/Page';
+import Layout23 from '../Layouts/Layout23';
 
 const HomePageLayout = styled.div`
   display: grid;

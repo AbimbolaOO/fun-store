@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import ReactDom from 'react-dom';
-import styled from '@emotion/styled';
+
 import { useTheme } from '@emotion/react';
+import styled from '@emotion/styled';
+import CloseIcon from '@mui/icons-material/Close';
 
 import SearchBar from '../Components/SearchBar';
-import CloseIcon from '@mui/icons-material/Close';
 
 interface ISearchContentWrapper {
   showSearch?: boolean;

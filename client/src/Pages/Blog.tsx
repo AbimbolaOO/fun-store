@@ -1,19 +1,19 @@
 import { useEffect, useState } from 'react';
-import styled from '@emotion/styled';
-import { useTheme } from '@emotion/react';
 
-import Page from '../Components/Page';
-import Layout23 from '../Layouts/Layout23';
-import MainArticleSection from '../Sections/MainArticleSection';
-import ArchiveSection from '../Sections/ArchiveSection';
-import TagSection from '../Sections/TagSection';
-import RecentsSection from '../Sections/RecentsSection';
-import Heading from '../Components/Heading';
-import Box from '../Components/Box';
-import SearchBar from '../Components/SearchBar';
-import Pagination from '../Components/Pagination';
+import { useTheme } from '@emotion/react';
+import styled from '@emotion/styled';
 
 import BlogPost, { IBlogPost } from '../__mocks__/BlogPost';
+import Box from '../Components/Box';
+import Heading from '../Components/Heading';
+import Page from '../Components/Page';
+import Pagination from '../Components/Pagination';
+import SearchBar from '../Components/SearchBar';
+import Layout23 from '../Layouts/Layout23';
+import ArchiveSection from '../Sections/ArchiveSection';
+import MainArticleSection from '../Sections/MainArticleSection';
+import RecentsSection from '../Sections/RecentsSection';
+import TagSection from '../Sections/TagSection';
 
 const AboutLayout = styled.div`
   display: grid;

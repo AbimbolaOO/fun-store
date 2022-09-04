@@ -1,19 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
-import styled from '@emotion/styled';
 import { Link as RouterLink } from 'react-router-dom';
 
-import { HoverDropDown } from '../Components/HoverDropDown';
+import styled from '@emotion/styled';
+
 import HamburgerMenu from '../Components/HamburgerMenu';
+import { HoverDropDown } from '../Components/HoverDropDown';
+// import AnimatingHambugerIcon from '../Components/AnimatingHambugerIcon';
+import { Cart, HamburgerMenuIcon, Profile, Search } from '../Components/MenuIcons';
 import { StyledRouterLink } from '../Components/StyledLinks';
 import CartSection from '../Sections/CartSection';
 import SearchSeaction from '../Sections/SearchSeaction';
-// import AnimatingHambugerIcon from '../Components/AnimatingHambugerIcon';
-import {
-  Search,
-  Profile,
-  Cart,
-  HamburgerMenuIcon,
-} from '../Components/MenuIcons';
 
 const PageLinkContainer = styled.ul`
   display: flex;
