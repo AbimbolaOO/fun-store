@@ -23,7 +23,7 @@ const SortBox = styled.div`
 
   & div {
     align-items: center;
-    color: #707070; //#535454
+    color: ${({ theme }) => theme.palette.btnBgColor};
     font-size: 0.9rem;
   }
 
@@ -35,7 +35,7 @@ const SortBox = styled.div`
 const Select = styled.select`
   padding: 8px;
   appearance: none;
-  border: 1px solid #707070;
+  border: 1px solid ${({ theme }) => theme.palette.btnBgColor};
   border-radius: 4px;
   user-select: none;
   background-image: url('/static/img/dropdowntriangle.png');

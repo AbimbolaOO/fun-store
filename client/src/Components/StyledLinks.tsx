@@ -13,14 +13,14 @@ export const StyledRouterLinkSecoundary = styled(RouterLink)`
   text-decoration: none;
   display: flex;
   position: relative;
-  color: #535454;
+  color: ${({ theme }) => theme.palette.primaryTextColor};
 
   &:hover {
-    color: #272626;
+    color: ${({ theme }) => theme.palette.linkTetiaryColor};
     text-decoration: underline;
     text-underline-offset: 5px;
     text-decoration-thickness: 1px;
-    text-decoration-color: #272626;
+    text-decoration-color: ${({ theme }) => theme.palette.linkTetiaryColor};
   }
 `;
 
@@ -31,16 +31,16 @@ export const LinkToArticle = styled(RouterLink)<ILinkToArticle>`
   color: ${({ color }) => (color ? color : 'black')};
 
   &:link {
-    color: black;
+    color: ${({ theme }) => theme.palette.bgColorTertiary};
   }
   &:visited {
     color: ${({ color }) => (color ? color : 'black')};
   }
   &:hover {
-    color: #034baf;
+    color: ${({ theme }) => theme.palette.hoverColorSecondary};
   }
   &:active {
-    color: black;
+    color: ${({ theme }) => theme.palette.bgColorTertiary};
   }
 `;
 
@@ -52,22 +52,22 @@ export const AnimatedIconLink = styled(RouterLink)`
   width: max-content;
 
   &:link {
-    color: black;
+    color: ${({ theme }) => theme.palette.bgColorTertiary};
   }
   &:visited {
     color: ${({ color }) => (color ? color : 'black')};
   }
   &:hover {
     gap: 5px;
-    color: #f0e504;
+    color: ${({ theme }) => theme.palette.hoverColorTertiary};
   }
   &:active {
-    color: black;
+    color: ${({ theme }) => theme.palette.bgColorTertiary};
   }
 
   &:hover > svg {
     display: block;
-    color: #f0e504;
+    color: ${({ theme }) => theme.palette.hoverColorTertiary};
     font-size: 18px;
     transition: all 0.8s;
   }
@@ -79,7 +79,7 @@ export const AnimatedIconLink = styled(RouterLink)`
     position: absolute;
     bottom: 0;
     left: 0;
-    background-color: #535454;
+    background-color: ${({ theme }) => theme.palette.primaryTextColor};
     transition: all 0.7s;
   }
 
@@ -95,23 +95,22 @@ export const ImgInfoTitleAction = styled(RouterLink)<IImgInfoTitleAction>`
   transition: color 0.7s;
 
   &:link {
-    color: #212121;
+    color: ${({ theme }) => theme.palette.linkTetiaryColor};
   }
   &:visited {
-    color: #212121;
+    color: ${({ theme }) => theme.palette.linkTetiaryColor};
   }
   &:hover {
-    color: #f0e504;
+    color: ${({ theme }) => theme.palette.hoverColorTertiary};
   }
   &:active {
-    color: #212121;
+    color: ${({ theme }) => theme.palette.linkTetiaryColor};
   }
 `;
 
 export const BasicLink = styled(RouterLink)`
   text-decoration: none;
-  color: black;
-
+  color: ${({ theme }) => theme.palette.bgColorSecondary};
   @media screen and (max-width: 450px) {
     font-size: 0.8rem;
   }
@@ -121,7 +120,7 @@ export const StyledRouterLink = styled(RouterLink)`
   text-decoration: none;
   display: inline-block;
   position: relative;
-  color: #535454;
+  color: ${({ theme }) => theme.palette.primaryTextColor};
 
   &:after {
     content: '';
@@ -131,7 +130,7 @@ export const StyledRouterLink = styled(RouterLink)`
     height: 1px;
     bottom: 0;
     left: 0;
-    background-color: #424141;
+    background-color: ${({ theme }) => theme.palette.bgColorSecondary};
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
   }
@@ -142,15 +141,15 @@ export const StyledRouterLink = styled(RouterLink)`
   }
 
   &:link {
-    color: #535454;
+    color: ${({ theme }) => theme.palette.primaryTextColor};
   }
   &:visited {
-    color: #535454;
+    color: ${({ theme }) => theme.palette.primaryTextColor};
   }
   &:hover {
-    color: #272626;
+    color: ${({ theme }) => theme.palette.linkTetiaryColor};
   }
   &:active {
-    color: #535454;
+    color: ${({ theme }) => theme.palette.primaryTextColor};
   }
 `;

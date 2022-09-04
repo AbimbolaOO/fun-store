@@ -31,7 +31,7 @@ const CartContentWrapper = styled.div<ICartContentWrapper>`
     height: 100%;
     z-index: -1;
     opacity: 0.5;
-    background-color: #000000;
+    background-color: ${({ theme }) => theme.palette.bgColorSecondary};
   }
 
   & > .cartArea {
@@ -48,7 +48,7 @@ const CartContentWrapper = styled.div<ICartContentWrapper>`
 const CartArea = styled.div`
   width: 380px;
   height: 100vh;
-  background-color: white;
+  background-color: ${({ theme }) => theme.palette.bgColor};
   float: right;
   right: 0px;
   display: flex;

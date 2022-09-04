@@ -26,7 +26,7 @@ const DropDownContainer = styled.div`
   flex-direction: column;
   position: relative;
   cursor: pointer;
-  color: #535454;
+  color: ${({ theme }) => theme.palette.primaryTextColor};
 
   & > .active {
     opacity: 1;
@@ -43,7 +43,7 @@ const DropBox = styled.div`
   width: 80vw;
   right: 0;
   z-index: 5;
-  background-color: #cacaca;
+  background-color: ${({ theme }) => theme.palette.dropBoxColor};
   gap: 1px;
   top: calc(100% + 10vh);
   transform: translateY(0);
@@ -58,11 +58,11 @@ const DropBoxItem = styled.div`
   padding: 16px;
   font-weight: 400;
   transition: transform 0.3s ease;
-  background-color: white;
+  background-color: ${({ theme }) => theme.palette.bgColor};
   width: 100%;
 
   &:hover {
-    color: white;
+    color: ${({ theme }) => theme.palette.bgColor};
     background-color: black;
   }
 `;

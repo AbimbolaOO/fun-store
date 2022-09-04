@@ -139,7 +139,7 @@ const SurfaceIconsBox = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 32px;
-  background-color: #f3f3f3;
+  background-color: ${({ theme }) => theme.palette.surfaceColor};
   position: relative;
   flex-wrap: nowrap;
 
@@ -154,7 +154,7 @@ const SurfaceIconBoxLabelBox = styled.div`
   position: absolute;
   right: calc(100% - 2rem);
   font-size: 1rem;
-  color: #fff;
+  color: ${({ theme }) => theme.palette.bgColor};
   min-width: 200px;
   display: flex;
   justify-content: flex-end;

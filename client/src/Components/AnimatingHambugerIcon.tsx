@@ -27,11 +27,8 @@ const Input = styled.input`
 
 const Hamburger = styled.label`
   position: absolute;
-  /* top: calc(50%);
-  right: calc(50%); */
   bottom: -10px;
   right: 0px;
-  /* bottom: 0px; */
   margin-left: -2em;
   margin-top: -45px;
   width: 2em;
@@ -43,7 +40,7 @@ const Hamburger = styled.label`
     width: 100%;
     height: 2px;
     border-radius: 3px;
-    background-color: #f8982b;
+    background-color: ${({ theme }) => theme.palette.bgColorTertiary};
     margin-top: 8px;
     transition: all 0.3s ease-in-out;
   }

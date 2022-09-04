@@ -1,4 +1,50 @@
-import { css } from '@emotion/react';
+import { css, Theme } from '@emotion/react';
+
+declare module '@emotion/react' {
+  export interface Theme {
+    palette: {
+      primaryTextColor: string;
+      placeHolderColor: string;
+      placeHolderColorSecondary: string;
+      tertiaryIconColor: string;
+      bgColor: string;
+      bgColorSecondary: string;
+      bgColorTertiary: string;
+      hoverColor: string;
+      hoverColorSecondary: string;
+      hoverColorTertiary: string;
+      linkTetiaryColor: string;
+      btnBgColor: string;
+      verticalLineColor: string;
+      horzontalLineColor: string;
+      paginationColor: string;
+      dropBoxColor: string;
+      surfaceColor: string;
+    };
+  }
+}
+
+export const theme: Theme = {
+  palette: {
+    primaryTextColor: '#707070',
+    placeHolderColor: '#e4e4e2',
+    placeHolderColorSecondary: '#dbdbdb',
+    tertiaryIconColor: '#b3b3b2',
+    bgColor: '#ffffff',
+    bgColorSecondary: '#000000',
+    bgColorTertiary: '#f8982b',
+    hoverColor: '#535454',
+    hoverColorSecondary: '#034baf',
+    hoverColorTertiary: '#f0e504',
+    linkTetiaryColor: '#212121',
+    btnBgColor: '#313131',
+    verticalLineColor: '#dadada',
+    horzontalLineColor: '#dadada',
+    paginationColor: '#b1b3b3',
+    dropBoxColor: '#cacaca',
+    surfaceColor: '#f3f3f3',
+  },
+};
 
 const GlobalStyles = css`
   *,

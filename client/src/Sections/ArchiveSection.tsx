@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 import Box from '../Components/Box';
+import { useTheme } from '@emotion/react';
 
 import ArchivePost from '../__mocks__/ArchivePost';
 import { LinkToArticle } from '../Components/StyledLinks';
@@ -10,17 +11,19 @@ const Heading = styled.div`
 `;
 
 const ArticleHeader = styled.div`
-  color: #535454;
+  color: ${({ theme }) => theme.palette.primaryTextColor};
 `;
 
 const ArchiveSection = () => {
+  const theme = useTheme();
+
   return (
     <Box direction="column" gap="20px">
       <Heading>Archive</Heading>
       {ArchivePost.map((data) => (
         <Box direction="column" key={data.sampleData}>
           <ArticleHeader>{data.date}</ArticleHeader>
-          <LinkToArticle to={data.link} color="#535454">
+          <LinkToArticle to={data.link} color={theme.palette.primaryTextColor}>
             {data.sampleData}
           </LinkToArticle>
         </Box>

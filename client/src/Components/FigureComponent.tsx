@@ -26,8 +26,7 @@ const ImgInfo = styled.section`
   display: grid;
   margin: auto auto 30px 30px;
   flex-wrap: wrap;
-  color: #212121;
-  /* border: 2px solid navy; */
+  color: ${({ theme }) => theme.palette.linkTetiaryColor};
 `;
 
 const ImgInfoTitle = styled.p`

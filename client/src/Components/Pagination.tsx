@@ -10,7 +10,7 @@ interface IPagination {
 }
 
 const PaginationWrapper = styled(Box)`
-  color: #b1b3b3;
+  color: ${({ theme }) => theme.palette.paginationColor};
   cursor: pointer;
   justify-content: center;
 

@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import ReactDom from 'react-dom';
 import styled from '@emotion/styled';
-import SearchBar from '../Components/SearchBar';
+import { useTheme } from '@emotion/react';
 
+import SearchBar from '../Components/SearchBar';
 import CloseIcon from '@mui/icons-material/Close';
 
 interface ISearchContentWrapper {
@@ -41,7 +42,7 @@ const SearchSlider = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: white;
+  background-color: ${({ theme }) => theme.palette.bgColor};
   display: grid;
   padding: 0 15vw;
   align-items: center;
@@ -52,7 +53,7 @@ const SearchSlider = styled.div`
 
 const CloseIconWrapper = styled(CloseIcon)`
   font-size: 4rem;
-  color: #b3b3b2;
+  color: ${({ theme }) => theme.palette.tertiaryIconColor};
   transition: transform 0.3s ease-in;
   position: absolute;
   top: 20px;
@@ -68,6 +69,7 @@ const SearchSeaction: React.FC<ISearchSeaction> = ({
   showSearch,
   setShowSearch,
 }) => {
+  const theme = useTheme();
   const [isActive, setIsActive] = useState(false);
   const modalRoot = document.getElementById('modal-root');
 
@@ -91,7 +93,7 @@ const SearchSeaction: React.FC<ISearchSeaction> = ({
         <SearchBar
           fontSize="3.5rem"
           bgSize="2rem"
-          placeHolderColor="#e4e4e2"
+          placeHolderColor={theme.palette.placeHolderColor}
           fullScreen
         />
       </SearchSlider>

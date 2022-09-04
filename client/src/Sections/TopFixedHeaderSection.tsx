@@ -12,7 +12,7 @@ const FixHeader = styled.div`
 
   align-items: center;
   line-height: 50px;
-  color: #535454;
+  color: ${({ theme }) => theme.palette.primaryTextColor};
 
   @media screen and (max-width: 990px) {
     justify-content: center;

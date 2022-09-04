@@ -19,8 +19,6 @@ const BodyLayoutContainer = styled.div`
   display: grid;
   grid-column: 1/4;
   grid-template-columns: 1fr 26fr 1fr;
-  /* height: 50vh; */
-  /* border: 2px solid lavender; */
   @media screen and (max-width: 1200px) {
     grid-template-columns: 1fr 8fr 1fr;
   }

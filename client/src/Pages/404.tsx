@@ -28,7 +28,7 @@ const LargeText = styled.div`
 `;
 
 const SmallText = styled.div`
-  color: #535454;
+  color: ${({ theme }) => theme.palette.primaryTextColor};
   display: flex;
   padding-top: 2rem;
   font-size: 1rem;
@@ -44,7 +44,7 @@ const StyledRouterLinkSecoundaryWrapper = styled(RouterLink)`
   text-decoration-color: black;
 
   &:hover {
-    color: #fbac1a;
+    color: ${({ theme }) => theme.palette.bgColorTertiary};
     text-decoration-color: black;
   }
 `;
@@ -52,7 +52,6 @@ const StyledRouterLinkSecoundaryWrapper = styled(RouterLink)`
 const ImageBox = styled.div`
   grid-column: 2 / span 3;
   height: 100vh;
-  /* padding-top: 20px; */
   background: center / cover no-repeat url('/static/img/notfoundImage.png');
 `;
 

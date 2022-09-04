@@ -11,7 +11,7 @@ const Label = styled.div`
   text-transform: uppercase;
 `;
 const Content = styled.div`
-  color: #535454;
+  color: ${({ theme }) => theme.palette.primaryTextColor};
 `;
 
 const InfoCardWrapper = styled.div`
