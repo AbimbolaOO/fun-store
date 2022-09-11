@@ -14,12 +14,16 @@ declare module '@emotion/react' {
       hoverColorSecondary: string;
       hoverColorTertiary: string;
       linkTetiaryColor: string;
+      linkSecondayColor: string;
       btnBgColor: string;
+      btnBgColorA: string;
+      btnBgColorB: string;
       verticalLineColor: string;
       horzontalLineColor: string;
       paginationColor: string;
       dropBoxColor: string;
       surfaceColor: string;
+      sliderIconColor: string;
     };
   }
 }
@@ -37,12 +41,16 @@ export const theme: Theme = {
     hoverColorSecondary: '#034baf',
     hoverColorTertiary: '#f0e504',
     linkTetiaryColor: '#212121',
+    linkSecondayColor: 'firebrick',
     btnBgColor: '#313131',
+    btnBgColorA: '#F3E4A4',
+    btnBgColorB: '#F5B91B',
     verticalLineColor: '#dadada',
     horzontalLineColor: '#dadada',
     paginationColor: '#b1b3b3',
     dropBoxColor: '#cacaca',
     surfaceColor: '#f3f3f3',
+    sliderIconColor: '#f2f2ef',
   },
 };
 

@@ -84,7 +84,7 @@ const FigureComponent: React.FC<IFigureComponent> = ({
       <div className="image-zoomer"></div>
       <ImgInfo>
         <ImgInfoTitle>{title}</ImgInfoTitle>
-        <ImgInfoTitleAction to="/">{`+ ${action}`}</ImgInfoTitleAction>
+        <ImgInfoTitleAction to="/collections/top-picks/products/ddf">{`+ ${action}`}</ImgInfoTitleAction>
       </ImgInfo>
     </Figure>
   );

@@ -8,7 +8,7 @@ import ItemSection from '../Sections/ItemSection';
 const ShopLayoutWrapper = styled.div`
   display: grid;
   gap: 60px;
-  grid-template-columns: 1fr 10fr 1fr;
+  grid-template-columns: 1fr 50fr 1fr;
 
   & > div:last-child > div:last-child {
     visibility: hidden;

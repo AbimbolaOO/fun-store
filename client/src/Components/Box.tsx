@@ -20,6 +20,7 @@ interface IBox {
   top?: string | number;
   gridColumn?: string;
   cursor?: string;
+  height?: string;
 }
 
 const Box = styled.div<IBox>`
@@ -38,6 +39,7 @@ const Box = styled.div<IBox>`
   color: ${({ color }) => (color ? color : 'inherit')};
   border: ${({ border }) => (border ? border : 'none')};
   width: ${({ width }) => (width ? width : 'auto')};
+  height: ${({ height }) => (height ? height : 'auto')};
   position: ${({ position }) => (position ? position : 'static')};
   z-index: ${({ zIndex }) => (zIndex ? zIndex : 'auto')};
   bottom: ${({ bottom }) => (bottom ? bottom : 'auto')};
