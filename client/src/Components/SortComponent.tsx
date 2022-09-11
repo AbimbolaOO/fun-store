@@ -66,6 +66,9 @@ const ResponsiveBox770 = styled(Box)`
 `;
 
 const ResponsiveBox575 = styled(Box)`
+  & * {
+    cursor: pointer;
+  }
   @media screen and (max-width: 575px) {
     display: none;
   }

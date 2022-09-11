@@ -6,7 +6,7 @@ interface IImgInfoTitleAction {
   fontSize?: string;
 }
 
-interface ILinkToArticle {
+interface IBasicBlueLink {
   color?: string;
 }
 
@@ -25,7 +25,7 @@ export const StyledRouterLinkSecoundary = styled(RouterLink)`
   }
 `;
 
-export const LinkToArticle = styled(RouterLink)<ILinkToArticle>`
+export const BasicBlueLink = styled(RouterLink)<IBasicBlueLink>`
   text-decoration: none;
   display: inline-block;
   position: relative;

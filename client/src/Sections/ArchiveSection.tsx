@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 
 import ArchivePost from '../__mocks__/ArchivePost';
 import Box from '../Components/Box';
-import { LinkToArticle } from '../Components/StyledLinks';
+import { BasicBlueLink } from '../Components/StyledLinks';
 
 const Heading = styled.div`
   font-size: 1.5rem;
@@ -22,9 +22,9 @@ const ArchiveSection = () => {
       {ArchivePost.map((data) => (
         <Box direction="column" key={data.sampleData}>
           <ArticleHeader>{data.date}</ArticleHeader>
-          <LinkToArticle to={data.link} color={theme.palette.primaryTextColor}>
+          <BasicBlueLink to={data.link} color={theme.palette.primaryTextColor}>
             {data.sampleData}
-          </LinkToArticle>
+          </BasicBlueLink>
         </Box>
       ))}
     </Box>

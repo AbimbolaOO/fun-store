@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
@@ -59,13 +60,15 @@ const DropBoxItem = styled.div`
 
 const SelectMenu: React.FC<IClickDropDown> = ({ options, children }) => {
   const [title, setTitle] = useState(children as string);
-  const color = '#535454';
+  const theme = useTheme();
 
   return (
     <DropDownContainer>
       <Box align="center" justify="center">
         {title}{' '}
-        <KeyboardArrowDownIcon sx={{ fontSize: '16px', color: color }} />
+        <KeyboardArrowDownIcon
+          sx={{ fontSize: '16px', color: `${theme.palette.primaryTextColor}` }}
+        />
       </Box>
       <DropBox className="dropBox">
         {options.map((option: IOption) => (

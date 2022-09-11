@@ -9,6 +9,7 @@ import FAQs from './Pages/FAQs';
 import Home from './Pages/Home';
 import LogIn from './Pages/LogIn';
 import OnSale from './Pages/OnSale';
+import ProductsView from './Pages/ProductsView';
 import Register from './Pages/Register';
 import ResetPassword from './Pages/ResetPassword';
 import Shop from './Pages/Shop';
@@ -26,6 +27,10 @@ export default function Router() {
         { path: 'blogs/post', element: <Blog /> },
         { path: 'collections', element: <Shop /> },
         { path: 'collections/top-picks', element: <OnSale /> },
+        {
+          path: 'collections/top-picks/products/:id',
+          element: <ProductsView />,
+        },
         { path: '404', element: <NotFoundPage /> },
         { path: '*', element: <Navigate to="/404" replace /> },
       ],
