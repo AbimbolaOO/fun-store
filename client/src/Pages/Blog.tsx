@@ -10,10 +10,10 @@ import Page from '../Components/Page';
 import Pagination from '../Components/Pagination';
 import SearchBar from '../Components/SearchBar';
 import Layout23 from '../Layouts/Layout23';
-import ArchiveSection from '../Sections/ArchiveSection';
-import MainArticleSection from '../Sections/MainArticleSection';
-import RecentsSection from '../Sections/RecentsSection';
-import TagSection from '../Sections/TagSection';
+import ArchiveSection from '../Sections/blog/ArchiveSection';
+import MainArticleSection from '../Sections/blog/MainArticleSection';
+import RecentsSection from '../Sections/blog/RecentsSection';
+import TagSection from '../Sections/blog/TagSection';
 
 const AboutLayout = styled.div`
   display: grid;

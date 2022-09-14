@@ -5,6 +5,40 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 import { StyledRouterLinkSecoundary } from './StyledLinks';
 
+const HoverDropDownTemplate: React.FC<any> = ({ label, children, color }) => {
+  return (
+    <DropDownContainer>
+      <DropDownLabel>
+        {label}{' '}
+        <KeyboardArrowDownIcon sx={{ fontSize: '16px', color: color }} />
+      </DropDownLabel>
+      <DropDownContentWrapper className="dropDownContent">
+        {children}
+      </DropDownContentWrapper>
+    </DropDownContainer>
+  );
+};
+
+export const HoverDropDown: React.FC<IHoverDropDown> = ({
+  children,
+  options,
+}) => {
+  return (
+    <HoverDropDownTemplate label={children} color="#535454">
+      <DropDownListContent>
+        {options.map((option: { path: string; label: string }) => (
+          <DropDownListRowElement key={option.label}>
+            <StyledRouterLinkSecoundary to={option.path}>
+              {option.label}
+            </StyledRouterLinkSecoundary>
+          </DropDownListRowElement>
+        ))}
+      </DropDownListContent>
+    </HoverDropDownTemplate>
+  );
+};
+
+// === interfaces
 interface IHoverDropDown {
   children: React.ReactNode;
   options: any;
@@ -46,36 +80,3 @@ const DropDownListRowElement = styled.div`
   display: flex;
   padding: 10px 30px;
 `;
-
-const HoverDropDownTemplate: React.FC<any> = ({ label, children, color }) => {
-  return (
-    <DropDownContainer>
-      <DropDownLabel>
-        {label}{' '}
-        <KeyboardArrowDownIcon sx={{ fontSize: '16px', color: color }} />
-      </DropDownLabel>
-      <DropDownContentWrapper className="dropDownContent">
-        {children}
-      </DropDownContentWrapper>
-    </DropDownContainer>
-  );
-};
-
-export const HoverDropDown: React.FC<IHoverDropDown> = ({
-  children,
-  options,
-}) => {
-  return (
-    <HoverDropDownTemplate label={children} color="#535454">
-      <DropDownListContent>
-        {options.map((option: { path: string; label: string }) => (
-          <DropDownListRowElement key={option.label}>
-            <StyledRouterLinkSecoundary to={option.path}>
-              {option.label}
-            </StyledRouterLinkSecoundary>
-          </DropDownListRowElement>
-        ))}
-      </DropDownListContent>
-    </HoverDropDownTemplate>
-  );
-};

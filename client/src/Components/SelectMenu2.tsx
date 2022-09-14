@@ -5,10 +5,38 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 import Box from './Box';
 
+const SelectMenu2: React.FC<IOption> = ({ options }) => {
+  const [val, setVal] = useState(() => options[0]);
+
+  return (
+    <Select>
+      <Box align="center" justify="space-between">
+        {val} <KeyboardArrowDownIcon sx={{ fontSize: '16px' }} />
+      </Box>
+      <OptionGroup className="options">
+        {options.map((val: string, index: number) => (
+          <Option
+            key={index}
+            onClick={() => {
+              setVal(val);
+            }}
+          >
+            {val}
+          </Option>
+        ))}
+      </OptionGroup>
+    </Select>
+  );
+};
+
+export default SelectMenu2;
+
+// === interfaces
 interface IOption {
   options: any;
 }
 
+// === styles
 const Select = styled.div`
   display: grid;
   border: 1px solid #e8e8e8;
@@ -45,29 +73,3 @@ const Option = styled.div`
     color: ${({ theme }) => theme.palette.hoverColorSecondary};
   }
 `;
-
-const SelectMenu2: React.FC<IOption> = ({ options }) => {
-  const [val, setVal] = useState(() => options[0]);
-
-  return (
-    <Select>
-      <Box align="center" justify="space-between">
-        {val} <KeyboardArrowDownIcon sx={{ fontSize: '16px' }} />
-      </Box>
-      <OptionGroup className="options">
-        {options.map((val: string, index: number) => (
-          <Option
-            key={index}
-            onClick={() => {
-              setVal(val);
-            }}
-          >
-            {val}
-          </Option>
-        ))}
-      </OptionGroup>
-    </Select>
-  );
-};
-
-export default SelectMenu2;

@@ -6,12 +6,6 @@ import Layout23 from '../Layouts/Layout23';
 import ContactsFormSection from '../Sections/contacts/ContactsFormSection';
 import ContactsInfoSection from '../Sections/contacts/ContactsInfoSection';
 
-const ContactLayout = styled(Box)`
-  @media screen and (min-width: 1200px) {
-    margin: 0 5vw;
-  }
-`;
-
 const Contacts = () => {
   return (
     <Page title="WhyteShops | Contacts ">
@@ -38,3 +32,10 @@ const Contacts = () => {
 };
 
 export default Contacts;
+
+// === styles
+const ContactLayout = styled(Box)`
+  @media screen and (min-width: 1200px) {
+    margin: 0 5vw;
+  }
+`;

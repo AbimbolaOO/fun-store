@@ -4,9 +4,57 @@ import ReactPlayer from 'react-player/youtube';
 import styled from '@emotion/styled';
 import CloseIcon from '@mui/icons-material/Close';
 
+const VideoModalSection: React.FC<VideoModal> = ({
+  setShowVideo,
+  showVideo,
+}) => {
+  const modalRoot = document.getElementById('modal-root');
+
+  const onClick = () => {
+    setShowVideo(!showVideo);
+  };
+
+  return ReactDom.createPortal(
+    <ModalBackgroundWrapper showVideo={showVideo}>
+      <ModalBackground>
+        <ModalContent>
+          <CloseIcon
+            sx={{
+              alignSelf: 'flex-end',
+              color: 'white',
+              marginRight: '-5px',
+              cursor: 'pointer',
+            }}
+            onClick={onClick}
+          />
+          <IframeWrapper>
+            <ReactPlayer
+              url="https://www.youtube.com/embed/CQLsdm1ZYAw"
+              playing={showVideo}
+              controls
+              title="About us"
+            />
+          </IframeWrapper>
+        </ModalContent>
+      </ModalBackground>
+    </ModalBackgroundWrapper>,
+    modalRoot!
+  );
+};
+
+export default VideoModalSection;
+
+// === interface
 interface IModalBackgroundWrapper {
   showVideo: boolean;
 }
+
+interface VideoModal {
+  setShowVideo(bool: boolean): any;
+  showVideo: boolean;
+}
+
+// === styles
 const ModalBackgroundWrapper = styled.div<IModalBackgroundWrapper>`
   position: fixed;
   top: 0;
@@ -51,48 +99,3 @@ const IframeWrapper = styled.div`
     height: 100%;
   }
 `;
-
-interface VideoModal {
-  setShowVideo(bool: boolean): any;
-  showVideo: boolean;
-}
-
-const VideoModalSection: React.FC<VideoModal> = ({
-  setShowVideo,
-  showVideo,
-}) => {
-  const modalRoot = document.getElementById('modal-root');
-
-  const onClick = () => {
-    setShowVideo(!showVideo);
-  };
-
-  return ReactDom.createPortal(
-    <ModalBackgroundWrapper showVideo={showVideo}>
-      <ModalBackground>
-        <ModalContent>
-          <CloseIcon
-            sx={{
-              alignSelf: 'flex-end',
-              color: 'white',
-              marginRight: '-5px',
-              cursor: 'pointer',
-            }}
-            onClick={onClick}
-          />
-          <IframeWrapper>
-            <ReactPlayer
-              url="https://www.youtube.com/embed/CQLsdm1ZYAw"
-              playing={showVideo}
-              controls
-              title="About us"
-            />
-          </IframeWrapper>
-        </ModalContent>
-      </ModalBackground>
-    </ModalBackgroundWrapper>,
-    modalRoot!
-  );
-};
-
-export default VideoModalSection;

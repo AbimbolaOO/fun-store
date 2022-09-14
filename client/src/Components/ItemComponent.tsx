@@ -6,6 +6,52 @@ import MultipleStopIcon from '@mui/icons-material/MultipleStop';
 
 import LabeledIcons from './LabeledIcons';
 
+const ItemComponent: React.FC<IItemComponent> = ({
+  imgSrc,
+  imgSrc2,
+  title,
+  action,
+  price,
+  oldPrice,
+}) => {
+  return (
+    <FigureBlock>
+      <Figure className="figure">
+        <StyledImg alt="sofa" src={imgSrc} />
+        <StyledImg alt="sofa" src={imgSrc2} className="fade" />
+        <SurfaceIcons className="surfaceIcons">
+          <LabeledIcons label="Add To Wishlist">
+            <FavoriteBorderIcon sx={{ color: 'gray' }} />
+          </LabeledIcons>
+          <LabeledIcons label="Compare">
+            <MultipleStopIcon sx={{ color: 'gray' }} />
+          </LabeledIcons>
+          <LabeledIcons label="Quick View">
+            <FavoriteBorderIcon sx={{ color: 'gray' }} />
+          </LabeledIcons>
+        </SurfaceIcons>
+      </Figure>
+      <InfoBlock className="infoBlock">
+        <AnimationTextBlock>
+          <Title className="title">{title}</Title>
+          <ActionLink className="actionLink">
+            <StyledRouterLink to="/collections/top-picks/products/ddf">
+              {action}
+            </StyledRouterLink>
+          </ActionLink>
+        </AnimationTextBlock>
+        <PriceSection>
+          <PriceTag>{price}</PriceTag>
+          <OldPriceTag>{oldPrice}</OldPriceTag>
+        </PriceSection>
+      </InfoBlock>
+    </FigureBlock>
+  );
+};
+
+export default ItemComponent;
+
+// === interfaces
 export interface IItemComponent {
   imgSrc: string;
   imgSrc2: string;
@@ -24,6 +70,7 @@ interface IFigure {
   action: string;
 }
 
+// === styles
 const StyledImg = styled.img`
   transition: opacity 0.7s ease-in-out;
 `;
@@ -131,48 +178,3 @@ const PriceSection = styled.div`
   display: flex;
   gap: 10px;
 `;
-
-const ItemComponent: React.FC<IItemComponent> = ({
-  imgSrc,
-  imgSrc2,
-  title,
-  action,
-  price,
-  oldPrice,
-}) => {
-  return (
-    <FigureBlock>
-      <Figure className="figure">
-        <StyledImg alt="sofa" src={imgSrc} />
-        <StyledImg alt="sofa" src={imgSrc2} className="fade" />
-        <SurfaceIcons className="surfaceIcons">
-          <LabeledIcons label="Add To Wishlist">
-            <FavoriteBorderIcon sx={{ color: 'gray' }} />
-          </LabeledIcons>
-          <LabeledIcons label="Compare">
-            <MultipleStopIcon sx={{ color: 'gray' }} />
-          </LabeledIcons>
-          <LabeledIcons label="Quick View">
-            <FavoriteBorderIcon sx={{ color: 'gray' }} />
-          </LabeledIcons>
-        </SurfaceIcons>
-      </Figure>
-      <InfoBlock className="infoBlock">
-        <AnimationTextBlock>
-          <Title className="title">{title}</Title>
-          <ActionLink className="actionLink">
-            <StyledRouterLink to="/collections/top-picks/products/ddf">
-              {action}
-            </StyledRouterLink>
-          </ActionLink>
-        </AnimationTextBlock>
-        <PriceSection>
-          <PriceTag>{price}</PriceTag>
-          <OldPriceTag>{oldPrice}</OldPriceTag>
-        </PriceSection>
-      </InfoBlock>
-    </FigureBlock>
-  );
-};
-
-export default ItemComponent;

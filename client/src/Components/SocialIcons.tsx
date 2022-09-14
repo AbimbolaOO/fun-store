@@ -1,8 +1,3 @@
-interface ISvgDimensions {
-  width?: string;
-  height?: string;
-}
-
 export const Facebook: React.FC<ISvgDimensions> = ({
   width = '14px',
   height = '14px',
@@ -164,3 +159,9 @@ export const Youtube: React.FC<ISvgDimensions> = ({
     </svg>
   );
 };
+
+// === interface
+interface ISvgDimensions {
+  width?: string;
+  height?: string;
+}

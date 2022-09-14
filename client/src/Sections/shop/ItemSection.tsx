@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
-import Box from '../Components/Box';
-import HorzontalLine from '../Components/HorzontalLine';
-import ItemComponent, { IItemComponent } from '../Components/ItemComponent';
-import { ImgInfoTitleAction } from '../Components/StyledLinks';
+import Box from '../../Components/Box';
+import HorzontalLine from '../../Components/HorzontalLine';
+import ItemComponent, { IItemComponent } from '../../Components/ItemComponent';
+import { ImgInfoTitleAction } from '../../Components/StyledLinks';
 
 interface IItemSection {
   sectionTitle: string;

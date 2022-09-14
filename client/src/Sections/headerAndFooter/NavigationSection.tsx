@@ -3,94 +3,18 @@ import { Link as RouterLink } from 'react-router-dom';
 
 import styled from '@emotion/styled';
 
-import HamburgerMenu from '../Components/HamburgerMenu';
-import { HoverDropDown } from '../Components/HoverDropDown';
+import HamburgerMenu from '../../Components/HamburgerMenu';
+import { HoverDropDown } from '../../Components/HoverDropDown';
 // import AnimatingHambugerIcon from '../Components/AnimatingHambugerIcon';
-import { Cart, HamburgerMenuIcon, Profile, Search } from '../Components/MenuIcons';
-import { StyledRouterLink } from '../Components/StyledLinks';
-import CartSection from '../Sections/CartSection';
-import SearchSeaction from '../Sections/SearchSeaction';
-
-const PageLinkContainer = styled.ul`
-  display: flex;
-  list-style: none;
-  gap: 20px;
-
-  @media screen and (max-width: 990px) {
-    display: none;
-  }
-`;
-
-const NavIconsGroup = styled.div`
-  display: flex;
-  gap: 20px;
-`;
-
-const NavMenuSuperContainerWrapper = styled.div`
-  display: grid;
-  grid-column: 1/4;
-  grid-template-columns: 1fr 26fr 1fr;
-  background-color: white;
-
-  @media screen and (max-width: 1200px) {
-    grid-template-columns: 1fr 8fr 1fr;
-  }
-
-  &.sticky {
-    position: sticky;
-    z-index: 2;
-    top: 0;
-    box-shadow: rgba(144, 144, 144, 0.24) 0px 4px 8px;
-  }
-`;
-
-const NavMenuSuperContainer = styled.div`
-  display: flex;
-  grid-column: 2/3;
-  flex-grow: 1;
-  align-items: center;
-  justify-content: space-between;
-  height: 80px;
-`;
-
-const MenuListItem = styled.li`
-  cursor: pointer;
-`;
-
-const RightOptionalView = styled.div`
-  @media screen and (min-width: 989px) {
-    display: none;
-  }
-`;
-
-const LeftOptionalView = styled.div`
-  @media screen and (max-width: 990px) {
-    display: none;
-  }
-`;
-
-const IconWrapper = styled.div`
-  cursor: pointer;
-`;
-
-const shopDropDownOptions = [
-  { label: 'Bed', path: '/' },
-  { label: 'Sofas', path: '/' },
-  { label: 'Consoles', path: '/' },
-  { label: 'Tables', path: '/' },
-  { label: 'Soft Seating', path: '/' },
-  { label: 'Coffee Tables', path: '/' },
-  { label: 'Chairs', path: '/' },
-];
-
-const menuOptions = [
-  { label: 'On Sale', path: '/collections/top-picks' },
-  { label: 'Shop', path: '/collections' },
-  { label: 'Blog', path: '/blogs/post' },
-  { label: 'About', path: '/pages/about-us' },
-  { label: 'FAQs', path: '/pages/faqs' },
-  { label: 'Contacts', path: '/pages/contact-us' },
-];
+import {
+  Cart,
+  HamburgerMenuIcon,
+  Profile,
+  Search,
+} from '../../Components/MenuIcons';
+import { StyledRouterLink } from '../../Components/StyledLinks';
+import CartSection from './CartSection';
+import SearchSeaction from './SearchSeaction';
 
 const NavigationSection: React.FC = () => {
   const stickyRef = useRef<HTMLDivElement>(null);
@@ -184,3 +108,86 @@ const NavigationSection: React.FC = () => {
 };
 
 export default NavigationSection;
+
+// === styles
+const PageLinkContainer = styled.ul`
+  display: flex;
+  list-style: none;
+  gap: 20px;
+
+  @media screen and (max-width: 990px) {
+    display: none;
+  }
+`;
+
+const NavIconsGroup = styled.div`
+  display: flex;
+  gap: 20px;
+`;
+
+const NavMenuSuperContainerWrapper = styled.div`
+  display: grid;
+  grid-column: 1/4;
+  grid-template-columns: 1fr 26fr 1fr;
+  background-color: white;
+
+  @media screen and (max-width: 1200px) {
+    grid-template-columns: 1fr 8fr 1fr;
+  }
+
+  &.sticky {
+    position: sticky;
+    z-index: 2;
+    top: 0;
+    box-shadow: rgba(144, 144, 144, 0.24) 0px 4px 8px;
+  }
+`;
+
+const NavMenuSuperContainer = styled.div`
+  display: flex;
+  grid-column: 2/3;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+`;
+
+const MenuListItem = styled.li`
+  cursor: pointer;
+`;
+
+const RightOptionalView = styled.div`
+  @media screen and (min-width: 989px) {
+    display: none;
+  }
+`;
+
+const LeftOptionalView = styled.div`
+  @media screen and (max-width: 990px) {
+    display: none;
+  }
+`;
+
+const IconWrapper = styled.div`
+  cursor: pointer;
+`;
+
+// === data
+const shopDropDownOptions = [
+  { label: 'Bed', path: '/' },
+  { label: 'Sofas', path: '/' },
+  { label: 'Consoles', path: '/' },
+  { label: 'Tables', path: '/' },
+  { label: 'Soft Seating', path: '/' },
+  { label: 'Coffee Tables', path: '/' },
+  { label: 'Chairs', path: '/' },
+];
+
+const menuOptions = [
+  { label: 'On Sale', path: '/collections/top-picks' },
+  { label: 'Shop', path: '/collections' },
+  { label: 'Blog', path: '/blogs/post' },
+  { label: 'About', path: '/pages/about-us' },
+  { label: 'FAQs', path: '/pages/faqs' },
+  { label: 'Contacts', path: '/pages/contact-us' },
+];

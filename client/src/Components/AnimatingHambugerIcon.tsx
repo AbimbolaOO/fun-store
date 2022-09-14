@@ -2,6 +2,22 @@ import React from 'react';
 
 import styled from '@emotion/styled';
 
+const AnimatingHambugerIcon = () => {
+  return (
+    <Div>
+      <Input id="toggle" type="checkbox"></Input>
+      <Hamburger htmlFor="toggle" className="hamburger">
+        <div className="top-bun"></div>
+        <div className="meat"></div>
+        <div className="bottom-bun"></div>
+      </Hamburger>
+    </Div>
+  );
+};
+
+export default AnimatingHambugerIcon;
+
+// === styles
 const Input = styled.input`
   display: none;
   width: 100%;
@@ -56,18 +72,3 @@ const Div = styled.div`
   width: 40px;
   height: 32px;
 `;
-
-const AnimatingHambugerIcon = () => {
-  return (
-    <Div>
-      <Input id="toggle" type="checkbox"></Input>
-      <Hamburger htmlFor="toggle" className="hamburger">
-        <div className="top-bun"></div>
-        <div className="meat"></div>
-        <div className="bottom-bun"></div>
-      </Hamburger>
-    </Div>
-  );
-};
-
-export default AnimatingHambugerIcon;

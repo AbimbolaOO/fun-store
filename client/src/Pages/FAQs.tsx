@@ -3,26 +3,6 @@ import styled from '@emotion/styled';
 import Page from '../Components/Page';
 import Layout23 from '../Layouts/Layout23';
 
-const ContentWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  color: ${({ theme }) => theme.palette.primaryTextColor};
-  padding: 10vh 0 5vh;
-
-  & div {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  & > div {
-    padding: 0 0 20px 0;
-  }
-
-  @media screen and (min-width: 1200px) {
-    margin: 0 5vw;
-  }
-`;
-
 const FAQs: React.FC = () => {
   return (
     <Page title="WhyteShops | FAQs ">
@@ -138,3 +118,24 @@ const FAQs: React.FC = () => {
 };
 
 export default FAQs;
+
+// === styles
+const ContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  color: ${({ theme }) => theme.palette.primaryTextColor};
+  padding: 10vh 0 5vh;
+
+  & div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  & > div {
+    padding: 0 0 20px 0;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin: 0 5vw;
+  }
+`;

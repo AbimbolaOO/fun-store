@@ -7,16 +7,6 @@ import FigureComponent from '../Components/FigureComponent';
 import Page from '../Components/Page';
 import Layout23 from '../Layouts/Layout23';
 
-const HomePageLayout = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-
-  @media screen and (max-width: 990px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
 const Home: React.FC = () => {
   const [smallDevice, setSmallDevice] = useState(false);
 
@@ -59,3 +49,14 @@ const Home: React.FC = () => {
 };
 
 export default Home;
+
+// === styles
+const HomePageLayout = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+
+  @media screen and (max-width: 990px) {
+    grid-template-columns: 1fr;
+  }
+`;

@@ -7,81 +7,6 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import Box from '../../Components/Box';
 import ItemComponent from '../../Components/ItemComponent';
 
-interface ISlider {
-  data: any;
-}
-
-interface ISliderArea {
-  margin?: string;
-  gap?: string;
-}
-
-const SliderArea = styled.div<ISliderArea>`
-  --slider-index: 0;
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 25%;
-
-  margin: 0 -16px;
-  overscroll-behavior-inline: contain;
-  scroll-snap-type: inline mandatory;
-  transform: translateX(calc(var(--slider-index) * -100%));
-  transition: transform 1s ease-out;
-
-  & > * {
-    scroll-snap-align: start;
-    padding: 0 16px;
-  }
-`;
-
-const SliderOverflowFix = styled.div`
-  overflow: hidden;
-`;
-
-const SliderContainer = styled.div`
-  position: relative;
-  display: grid;
-  margin: 40px 0 140px;
-
-  & > .left,
-  & > .right {
-    position: absolute;
-    display: none;
-    place-content: center;
-    top: calc(50%);
-    background-color: ${({ theme }) => theme.palette.sliderIconColor};
-    height: 52px;
-    width: 52px;
-    border-radius: 50%;
-    z-index: 2;
-    pointer-events: none;
-  }
-
-  & > .right {
-    right: -26px;
-  }
-
-  & > .left {
-    left: -26px;
-  }
-
-  &:hover > .right,
-  &:hover > .left {
-    display: grid;
-    pointer-events: auto;
-  }
-
-  &:hover > .left:hover,
-  &:hover > .right:hover {
-    background-color: ${({ theme }) => theme.palette.linkTetiaryColor};
-  }
-
-  &:hover > .left:hover > *,
-  &:hover > .right:hover > * {
-    color: white;
-  }
-`;
-
 const Slider: React.FC<ISlider> = ({ data }) => {
   const xRef = useRef<HTMLDivElement>(null);
 
@@ -164,3 +89,80 @@ const Slider: React.FC<ISlider> = ({ data }) => {
 };
 
 export default Slider;
+
+// === interfaces
+interface ISlider {
+  data: any;
+}
+
+interface ISliderArea {
+  margin?: string;
+  gap?: string;
+}
+
+// === styles
+const SliderArea = styled.div<ISliderArea>`
+  --slider-index: 0;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 25%;
+
+  margin: 0 -16px;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+  transform: translateX(calc(var(--slider-index) * -100%));
+  transition: transform 1s ease-out;
+
+  & > * {
+    scroll-snap-align: start;
+    padding: 0 16px;
+  }
+`;
+
+const SliderOverflowFix = styled.div`
+  overflow: hidden;
+`;
+
+const SliderContainer = styled.div`
+  position: relative;
+  display: grid;
+  margin: 40px 0 140px;
+
+  & > .left,
+  & > .right {
+    position: absolute;
+    display: none;
+    place-content: center;
+    top: calc(50%);
+    background-color: ${({ theme }) => theme.palette.sliderIconColor};
+    height: 52px;
+    width: 52px;
+    border-radius: 50%;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  & > .right {
+    right: -26px;
+  }
+
+  & > .left {
+    left: -26px;
+  }
+
+  &:hover > .right,
+  &:hover > .left {
+    display: grid;
+    pointer-events: auto;
+  }
+
+  &:hover > .left:hover,
+  &:hover > .right:hover {
+    background-color: ${({ theme }) => theme.palette.linkTetiaryColor};
+  }
+
+  &:hover > .left:hover > *,
+  &:hover > .right:hover > * {
+    color: white;
+  }
+`;

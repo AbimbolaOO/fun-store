@@ -2,10 +2,6 @@ import IconGroup from './IconGroup';
 import { Facebook, Instagram, Linkedin, Twitter, Youtube } from './SocialIcons';
 import VerticalLine from './VerticalLine';
 
-interface ISocialIconsGroup {
-  noVerticalLine?: boolean;
-}
-
 const SocialIconsGroup: React.FC<ISocialIconsGroup> = ({ noVerticalLine }) => {
   return (
     <IconGroup>
@@ -20,3 +16,8 @@ const SocialIconsGroup: React.FC<ISocialIconsGroup> = ({ noVerticalLine }) => {
 };
 
 export default SocialIconsGroup;
+
+// === interfaces
+interface ISocialIconsGroup {
+  noVerticalLine?: boolean;
+}

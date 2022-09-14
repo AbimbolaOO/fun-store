@@ -7,70 +7,6 @@ import WestIcon from '@mui/icons-material/West';
 import { BasicLink } from '../Components/StyledLinks';
 import Box from './Box';
 
-interface IOption {
-  label: string;
-  path: string;
-}
-interface IOptions {
-  mainMenu: IOption[];
-  shop: IOption[];
-}
-
-interface IHamburgerMenu {
-  children: React.ReactNode;
-  options: IOptions;
-}
-
-const DropDownContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  cursor: pointer;
-  color: ${({ theme }) => theme.palette.primaryTextColor};
-
-  & > .active {
-    opacity: 1;
-    transform: translateY(-6.2vh);
-    pointer-events: auto;
-  }
-`;
-
-const DropBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  box-shadow: 1px 1px 10px 2px rgba(218, 222, 223, 0.377);
-  width: 80vw;
-  right: 0;
-  z-index: 5;
-  background-color: ${({ theme }) => theme.palette.dropBoxColor};
-  gap: 1px;
-  top: calc(100% + 10vh);
-  transform: translateY(0);
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.4s ease-in-out;
-`;
-
-const DropBoxItem = styled.div`
-  display: flex;
-  font-size: 1rem;
-  padding: 16px;
-  font-weight: 400;
-  transition: transform 0.3s ease;
-  background-color: ${({ theme }) => theme.palette.bgColor};
-  width: 100%;
-
-  &:hover {
-    color: ${({ theme }) => theme.palette.bgColor};
-    background-color: black;
-  }
-`;
-interface IMenu {
-  options: any;
-  isActive: boolean;
-}
-
 export const Menu: React.FC<IMenu> = ({ options, isActive }) => {
   const [option, setOption] = useState(options[0]);
   const [subMenuHeader, setSubMenuHeader] = useState(false);
@@ -178,3 +114,69 @@ const HamburgerMenu: React.FC<IHamburgerMenu> = ({ children, options }) => {
 };
 
 export default HamburgerMenu;
+
+// === interfaces
+interface IOption {
+  label: string;
+  path: string;
+}
+interface IOptions {
+  mainMenu: IOption[];
+  shop: IOption[];
+}
+
+interface IHamburgerMenu {
+  children: React.ReactNode;
+  options: IOptions;
+}
+interface IMenu {
+  options: any;
+  isActive: boolean;
+}
+
+// === styles
+const DropDownContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+  color: ${({ theme }) => theme.palette.primaryTextColor};
+
+  & > .active {
+    opacity: 1;
+    transform: translateY(-6.2vh);
+    pointer-events: auto;
+  }
+`;
+
+const DropBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  box-shadow: 1px 1px 10px 2px rgba(218, 222, 223, 0.377);
+  width: 80vw;
+  right: 0;
+  z-index: 5;
+  background-color: ${({ theme }) => theme.palette.dropBoxColor};
+  gap: 1px;
+  top: calc(100% + 10vh);
+  transform: translateY(0);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease-in-out;
+`;
+
+const DropBoxItem = styled.div`
+  display: flex;
+  font-size: 1rem;
+  padding: 16px;
+  font-weight: 400;
+  transition: transform 0.3s ease;
+  background-color: ${({ theme }) => theme.palette.bgColor};
+  width: 100%;
+
+  &:hover {
+    color: ${({ theme }) => theme.palette.bgColor};
+    background-color: black;
+  }
+`;

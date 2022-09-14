@@ -1,12 +1,8 @@
 import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 
-import Box from '../Components/Box';
-import { StyledRouterLinkSecoundary } from '../Components/StyledLinks';
-
-const Heading = styled.div`
-  font-size: 1.5rem;
-`;
+import Box from '../../Components/Box';
+import { StyledRouterLinkSecoundary } from '../../Components/StyledLinks';
 
 const TagSection = () => {
   const theme = useTheme();
@@ -89,3 +85,8 @@ const TagSection = () => {
 };
 
 export default TagSection;
+
+// === styles
+const Heading = styled.div`
+  font-size: 1.5rem;
+`;

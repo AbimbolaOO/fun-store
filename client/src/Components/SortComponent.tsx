@@ -7,11 +7,70 @@ import ViewListIcon from '@mui/icons-material/ViewList';
 
 import Box from '../Components/Box';
 
+const SortComponent: React.FC<ISortComponent> = ({
+  showFilterBox,
+  setShowFilterBox,
+}) => {
+  return (
+    <SortBox>
+      <Box gap="16px" cursor="pointer">
+        <ResponsiveBox575>
+          <ViewComfyIcon />
+        </ResponsiveBox575>
+        <AppsIcon />
+        <GridViewIcon />
+        <ResponsiveBox575>
+          <ViewListIcon />
+        </ResponsiveBox575>
+      </Box>
+      <Box gap="30px">
+        <ResponsiveBox990>Showing 1 - 10 of 14 result</ResponsiveBox990>
+        <ResponsiveBox770 gap="10px">
+          <Box>Show</Box>
+          <SelectNumber name="cars" id="show">
+            {Array.from(Array(100).keys()).map((i: number) => (
+              <option value={i + 1} key={i + 1}>
+                {i + 1}
+              </option>
+            ))}
+          </SelectNumber>
+          <ResponsiveBox990>per page</ResponsiveBox990>
+        </ResponsiveBox770>
+        <ResponsiveBox575 gap="10px">
+          <Box>Sort by:</Box>
+          <Select name="cars" id="show">
+            <option value="Featured">Featured</option>
+            <option value="Best Selling">Best Selling</option>
+            <option value="Alphabetically, A-Z">Alphabetically A-Z</option>
+            <option value="Alphabetically, Z-A">Alphabetically Z-A</option>
+            <option value="Price, low to high">Price, low to high</option>
+            <option value="Price, high to low">Price, high to low</option>
+            <option value="Date, new to old">Date, new to old</option>
+            <option value="Date, old to new">Date, old to new</option>
+          </Select>
+        </ResponsiveBox575>
+        <ResponsiveBox990
+          cursor="pointer"
+          gap="4px"
+          onClick={() => setShowFilterBox(!showFilterBox)}
+        >
+          <FilterListIcon sx={{ width: '16px' }} />
+          <Box cursor="pointer">Filters</Box>
+        </ResponsiveBox990>
+      </Box>
+    </SortBox>
+  );
+};
+
+export default SortComponent;
+
+// === interfaces
 interface ISortComponent {
   showFilterBox: boolean;
   setShowFilterBox: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
+// === styles
 const SortBox = styled.div`
   grid-column: 2 / 3;
   display: flex;
@@ -73,60 +132,3 @@ const ResponsiveBox575 = styled(Box)`
     display: none;
   }
 `;
-
-const SortComponent: React.FC<ISortComponent> = ({
-  showFilterBox,
-  setShowFilterBox,
-}) => {
-  return (
-    <SortBox>
-      <Box gap="16px" cursor="pointer">
-        <ResponsiveBox575>
-          <ViewComfyIcon />
-        </ResponsiveBox575>
-        <AppsIcon />
-        <GridViewIcon />
-        <ResponsiveBox575>
-          <ViewListIcon />
-        </ResponsiveBox575>
-      </Box>
-      <Box gap="30px">
-        <ResponsiveBox990>Showing 1 - 10 of 14 result</ResponsiveBox990>
-        <ResponsiveBox770 gap="10px">
-          <Box>Show</Box>
-          <SelectNumber name="cars" id="show">
-            {Array.from(Array(100).keys()).map((i: number) => (
-              <option value={i + 1} key={i + 1}>
-                {i + 1}
-              </option>
-            ))}
-          </SelectNumber>
-          <ResponsiveBox990>per page</ResponsiveBox990>
-        </ResponsiveBox770>
-        <ResponsiveBox575 gap="10px">
-          <Box>Sort by:</Box>
-          <Select name="cars" id="show">
-            <option value="Featured">Featured</option>
-            <option value="Best Selling">Best Selling</option>
-            <option value="Alphabetically, A-Z">Alphabetically A-Z</option>
-            <option value="Alphabetically, Z-A">Alphabetically Z-A</option>
-            <option value="Price, low to high">Price, low to high</option>
-            <option value="Price, high to low">Price, high to low</option>
-            <option value="Date, new to old">Date, new to old</option>
-            <option value="Date, old to new">Date, old to new</option>
-          </Select>
-        </ResponsiveBox575>
-        <ResponsiveBox990
-          cursor="pointer"
-          gap="4px"
-          onClick={() => setShowFilterBox(!showFilterBox)}
-        >
-          <FilterListIcon sx={{ width: '16px' }} />
-          <Box cursor="pointer">Filters</Box>
-        </ResponsiveBox990>
-      </Box>
-    </SortBox>
-  );
-};
-
-export default SortComponent;

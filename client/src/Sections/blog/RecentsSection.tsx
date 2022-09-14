@@ -1,15 +1,10 @@
 import styled from '@emotion/styled';
 
-import Box from '../Components/Box';
-import Heading from '../Components/Heading';
-import HorizontalLine from '../Components/HorzontalLine';
-import { BasicBlueLink } from '../Components/StyledLinks';
-import TertiaryText from '../Components/TertiaryText';
-
-const Img = styled.img`
-  width: 100px;
-  height: 120px;
-`;
+import Box from '../../Components/Box';
+import Heading from '../../Components/Heading';
+import HorizontalLine from '../../Components/HorzontalLine';
+import { BasicBlueLink } from '../../Components/StyledLinks';
+import TertiaryText from '../../Components/TertiaryText';
 
 const RecentsSection = () => {
   return (
@@ -43,3 +38,9 @@ const RecentsSection = () => {
 };
 
 export default RecentsSection;
+
+// === styles
+const Img = styled.img`
+  width: 100px;
+  height: 120px;
+`;
