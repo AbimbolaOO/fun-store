@@ -5,8 +5,48 @@ import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 import CloseIcon from '@mui/icons-material/Close';
 
-import SearchBar from '../Components/SearchBar';
+import SearchBar from '../../Components/SearchBar';
 
+const SearchSeaction: React.FC<ISearchSeaction> = ({
+  showSearch,
+  setShowSearch,
+}) => {
+  const theme = useTheme();
+  const [isActive, setIsActive] = useState(false);
+  const modalRoot = document.getElementById('modal-root');
+
+  useEffect(() => {
+    if (showSearch) {
+      setIsActive(true);
+    }
+  }, [showSearch]);
+
+  const onClick = () => {
+    setIsActive(!isActive);
+    setTimeout(() => {
+      setShowSearch(!showSearch);
+    }, 400);
+  };
+
+  return ReactDom.createPortal(
+    <SearchContentWrapper showSearch={showSearch}>
+      <SearchSlider className={isActive ? 'slider' : ''}>
+        <CloseIconWrapper onClick={onClick} />
+        <SearchBar
+          fontSize="3.5rem"
+          bgSize="2rem"
+          placeHolderColor={theme.palette.placeHolderColor}
+          fullScreen
+        />
+      </SearchSlider>
+    </SearchContentWrapper>,
+    modalRoot!
+  );
+};
+
+export default SearchSeaction;
+
+// === interface
 interface ISearchContentWrapper {
   showSearch?: boolean;
 }
@@ -16,6 +56,7 @@ interface ISearchSeaction {
   setShowSearch: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
+// === styles
 const SearchContentWrapper = styled.div<ISearchContentWrapper>`
   position: fixed;
   top: 0;
@@ -65,42 +106,3 @@ const CloseIconWrapper = styled(CloseIcon)`
     cursor: pointer;
   }
 `;
-
-const SearchSeaction: React.FC<ISearchSeaction> = ({
-  showSearch,
-  setShowSearch,
-}) => {
-  const theme = useTheme();
-  const [isActive, setIsActive] = useState(false);
-  const modalRoot = document.getElementById('modal-root');
-
-  useEffect(() => {
-    if (showSearch) {
-      setIsActive(true);
-    }
-  }, [showSearch]);
-
-  const onClick = () => {
-    setIsActive(!isActive);
-    setTimeout(() => {
-      setShowSearch(!showSearch);
-    }, 400);
-  };
-
-  return ReactDom.createPortal(
-    <SearchContentWrapper showSearch={showSearch}>
-      <SearchSlider className={isActive ? 'slider' : ''}>
-        <CloseIconWrapper onClick={onClick} />
-        <SearchBar
-          fontSize="3.5rem"
-          bgSize="2rem"
-          placeHolderColor={theme.palette.placeHolderColor}
-          fullScreen
-        />
-      </SearchSlider>
-    </SearchContentWrapper>,
-    modalRoot!
-  );
-};
-
-export default SearchSeaction;

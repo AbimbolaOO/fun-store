@@ -1,8 +1,3 @@
-interface ISvgDimensions {
-  width?: string;
-  height?: string;
-}
-
 export const Love: React.FC<ISvgDimensions> = ({
   width = '20px',
   height = '20px',
@@ -136,3 +131,9 @@ export const HamburgerMenuIcon: React.FC<ISvgDimensions> = ({
     </svg>
   );
 };
+
+// === interfaces
+interface ISvgDimensions {
+  width?: string;
+  height?: string;
+}

@@ -8,40 +8,6 @@ import PlainImage from '../../Components/PlainImage';
 import QuantitySetter from '../../Components/QuantitySetter';
 import SelectMenu2 from '../../Components/SelectMenu2';
 
-const ButtonConfiguratorWrapper = styled.div`
-  position: fixed;
-  display: none;
-  pointer-events: none;
-  grid-template-columns: 1fr 8.5fr 1fr;
-  width: 100%;
-  height: 70px;
-  bottom: 0px;
-  background-color: white;
-  z-index: 3;
-  box-shadow: rgba(144, 144, 144, 0.24) 0px -4px 8px;
-
-  &.bottom-fixed {
-    display: grid;
-    pointer-events: auto;
-  }
-`;
-
-const ButtonConfigurator = styled.div`
-  display: grid;
-  grid-column: 2/3;
-`;
-
-const options = [
-  '4x6ft / Grey / Matte - ₦124,999.00',
-  '4x6ft / Grey / Velvet - ₦124,999.00',
-  '4x6ft / Black / Matte - ₦124,999.00',
-  '4x6ft / Black / Velvet - ₦124,999.00',
-  '6x6ft / Grey / Matte - ₦161,999.00',
-  '6x6ft / Grey / Velvet - ₦161,999.00',
-  '6x6ft / Black / Matte - ₦161,999.00',
-  '6x6ft / Black / Velvet - ₦161,999.00',
-];
-
 const BottomConfigurator = () => {
   const bottomConfigRef = useRef<HTMLDivElement>(null);
 
@@ -87,3 +53,39 @@ const BottomConfigurator = () => {
 };
 
 export default BottomConfigurator;
+
+// === data
+const options = [
+  '4x6ft / Grey / Matte - ₦124,999.00',
+  '4x6ft / Grey / Velvet - ₦124,999.00',
+  '4x6ft / Black / Matte - ₦124,999.00',
+  '4x6ft / Black / Velvet - ₦124,999.00',
+  '6x6ft / Grey / Matte - ₦161,999.00',
+  '6x6ft / Grey / Velvet - ₦161,999.00',
+  '6x6ft / Black / Matte - ₦161,999.00',
+  '6x6ft / Black / Velvet - ₦161,999.00',
+];
+
+// === styles
+const ButtonConfiguratorWrapper = styled.div`
+  position: fixed;
+  display: none;
+  pointer-events: none;
+  grid-template-columns: 1fr 8.5fr 1fr;
+  width: 100%;
+  height: 70px;
+  bottom: 0px;
+  background-color: white;
+  z-index: 3;
+  box-shadow: rgba(144, 144, 144, 0.24) 0px -4px 8px;
+
+  &.bottom-fixed {
+    display: grid;
+    pointer-events: auto;
+  }
+`;
+
+const ButtonConfigurator = styled.div`
+  display: grid;
+  grid-column: 2/3;
+`;

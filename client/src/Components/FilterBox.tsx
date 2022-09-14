@@ -1,52 +1,11 @@
 import styled from '@emotion/styled';
 
 import Box from '../Components/Box';
-import { StyledRouterLink, StyledRouterLinkSecoundary } from '../Components/StyledLinks';
+import {
+  StyledRouterLink,
+  StyledRouterLinkSecoundary,
+} from '../Components/StyledLinks';
 import SearchBar from './SearchBar';
-
-interface IFilterBox {
-  showFilterBox: boolean;
-}
-
-const FilterBoxWrapper = styled.div`
-  grid-column: 1 / span 3;
-  width: 100%;
-  height: 0px;
-  box-shadow: rgba(144, 144, 144, 0.24) 0px 4px 8px;
-  background-color: ${({ theme }) => theme.palette.bgColor};
-  display: grid;
-  grid-template-columns: 1fr 8fr 1fr;
-  overflow-y: auto;
-  transition: height 0.5s ease-in;
-
-  &:hover {
-    height: 320px;
-  }
-
-  &.show-filter-box {
-    height: 320px;
-  }
-`;
-
-const Fliterbox = styled.div`
-  grid-column: 2 / 3;
-  margin: 64px 0;
-  display: grid;
-  gap: 20px;
-  row-gap: 60px;
-  grid-template-columns: repeat(6, calc(100% / 6));
-`;
-
-const Header = styled.div`
-  font-size: 1.5rem;
-  margin-bottom: 18px;
-`;
-
-const BoxLink = styled.div`
-  border: 1px solid #535454;
-  width: fit-content;
-  padding: 4px 4px 0px;
-`;
 
 const FilterBox: React.FC<IFilterBox> = ({ showFilterBox }) => {
   return (
@@ -178,3 +137,49 @@ const FilterBox: React.FC<IFilterBox> = ({ showFilterBox }) => {
 };
 
 export default FilterBox;
+
+// === interfaces
+interface IFilterBox {
+  showFilterBox: boolean;
+}
+
+// === styles
+const FilterBoxWrapper = styled.div`
+  grid-column: 1 / span 3;
+  width: 100%;
+  height: 0px;
+  box-shadow: rgba(144, 144, 144, 0.24) 0px 4px 8px;
+  background-color: ${({ theme }) => theme.palette.bgColor};
+  display: grid;
+  grid-template-columns: 1fr 8fr 1fr;
+  overflow-y: auto;
+  transition: height 0.5s ease-in;
+
+  &:hover {
+    height: 320px;
+  }
+
+  &.show-filter-box {
+    height: 320px;
+  }
+`;
+
+const Fliterbox = styled.div`
+  grid-column: 2 / 3;
+  margin: 64px 0;
+  display: grid;
+  gap: 20px;
+  row-gap: 60px;
+  grid-template-columns: repeat(6, calc(100% / 6));
+`;
+
+const Header = styled.div`
+  font-size: 1.5rem;
+  margin-bottom: 18px;
+`;
+
+const BoxLink = styled.div`
+  border: 1px solid #535454;
+  width: fit-content;
+  padding: 4px 4px 0px;
+`;

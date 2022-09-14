@@ -4,58 +4,6 @@ import styled from '@emotion/styled';
 
 import Box from './Box';
 
-interface IPagination {
-  totalItems: number;
-  pageSize: number;
-  currentPage: number;
-  setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
-}
-
-const PaginationWrapper = styled(Box)`
-  color: ${({ theme }) => theme.palette.paginationColor};
-  cursor: pointer;
-  justify-content: center;
-
-  & > div:last-child {
-    padding-left: 10px;
-  }
-
-  & > div:first-of-type {
-    padding-right: 10px;
-  }
-`;
-
-const PageNumber = styled(Box)`
-  padding: 0 10px;
-  padding-bottom: 10px;
-  position: relative;
-  &.currentPage {
-    color: black;
-  }
-
-  &.currentPage::before {
-    position: absolute;
-    content: '';
-    width: 100%;
-    height: 2px;
-    background-color: black;
-    left: 0;
-    bottom: 0;
-  }
-`;
-
-const PrevBtn = styled(Box)`
-  &.PrevBtnInctive {
-    cursor: not-allowed;
-  }
-`;
-
-const NextBtn = styled(Box)`
-  &.NextBtnInctive {
-    cursor: not-allowed;
-  }
-`;
-
 const Pagination: React.FC<IPagination> = ({
   totalItems,
   pageSize,
@@ -119,3 +67,57 @@ const Pagination: React.FC<IPagination> = ({
 };
 
 export default Pagination;
+
+// === interfaces
+interface IPagination {
+  totalItems: number;
+  pageSize: number;
+  currentPage: number;
+  setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
+}
+
+// === styles
+const PaginationWrapper = styled(Box)`
+  color: ${({ theme }) => theme.palette.paginationColor};
+  cursor: pointer;
+  justify-content: center;
+
+  & > div:last-child {
+    padding-left: 10px;
+  }
+
+  & > div:first-of-type {
+    padding-right: 10px;
+  }
+`;
+
+const PageNumber = styled(Box)`
+  padding: 0 10px;
+  padding-bottom: 10px;
+  position: relative;
+  &.currentPage {
+    color: black;
+  }
+
+  &.currentPage::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    left: 0;
+    bottom: 0;
+  }
+`;
+
+const PrevBtn = styled(Box)`
+  &.PrevBtnInctive {
+    cursor: not-allowed;
+  }
+`;
+
+const NextBtn = styled(Box)`
+  &.NextBtnInctive {
+    cursor: not-allowed;
+  }
+`;

@@ -2,6 +2,48 @@ import { useState } from 'react';
 
 import styled from '@emotion/styled';
 
+const SearchBar: React.FC<ISearchBar> = ({
+  fontSize,
+  bgSize,
+  placeHolderColor,
+  fullScreen = false,
+}) => {
+  const [searchField, setSearchField] = useState('');
+  const handleOnFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    console.log(`love is the answer ${searchField}`);
+  };
+  return !fullScreen ? (
+    <form onSubmit={handleOnFormSubmit}>
+      <Input
+        fontSize={fontSize}
+        bgSize={bgSize}
+        placeHolderColor={placeHolderColor}
+        type="text"
+        placeholder="Search our store"
+        onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+          setSearchField(event.target.value)
+        }
+        value={searchField}
+      />
+    </form>
+  ) : (
+    <form onSubmit={handleOnFormSubmit}>
+      <InputFullSize
+        type="text"
+        placeholder="Search our store"
+        onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+          setSearchField(event.target.value)
+        }
+        value={searchField}
+      />
+    </form>
+  );
+};
+
+export default SearchBar;
+
+// === interfaces
 interface ISearchBar {
   fontSize?: string;
   bgSize?: string;
@@ -9,6 +51,7 @@ interface ISearchBar {
   fullScreen?: boolean;
 }
 
+// === styles
 const Input = styled.input<ISearchBar>`
   display: flex;
   width: 100%;
@@ -99,44 +142,3 @@ const InputFullSize = styled.input<ISearchBar>`
     }
   }
 `;
-
-const SearchBar: React.FC<ISearchBar> = ({
-  fontSize,
-  bgSize,
-  placeHolderColor,
-  fullScreen = false,
-}) => {
-  const [searchField, setSearchField] = useState('');
-  const handleOnFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    console.log(`love is the answer ${searchField}`);
-  };
-  return !fullScreen ? (
-    <form onSubmit={handleOnFormSubmit}>
-      <Input
-        fontSize={fontSize}
-        bgSize={bgSize}
-        placeHolderColor={placeHolderColor}
-        type="text"
-        placeholder="Search our store"
-        onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-          setSearchField(event.target.value)
-        }
-        value={searchField}
-      />
-    </form>
-  ) : (
-    <form onSubmit={handleOnFormSubmit}>
-      <InputFullSize
-        type="text"
-        placeholder="Search our store"
-        onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-          setSearchField(event.target.value)
-        }
-        value={searchField}
-      />
-    </form>
-  );
-};
-
-export default SearchBar;

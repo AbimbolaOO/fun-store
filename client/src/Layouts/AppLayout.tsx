@@ -3,9 +3,9 @@ import { Outlet } from 'react-router-dom';
 import styled from '@emotion/styled';
 
 import HorzontalLine from '../Components/HorzontalLine';
-import FooterSection from '../Sections/FooterSection';
-import NavigationSection from '../Sections/NavigationSection';
-import TopFixedHeaderSection from '../Sections/TopFixedHeaderSection';
+import FooterSection from '../Sections/headerAndFooter/FooterSection';
+import NavigationSection from '../Sections/headerAndFooter/NavigationSection';
+import TopFixedHeaderSection from '../Sections/headerAndFooter/TopFixedHeaderSection';
 
 const ContentLayout = styled.div`
   display: grid;

@@ -1,8 +1,3 @@
-interface ISvgDimensions {
-  width?: string;
-  height?: string;
-}
-
 export const Paypal: React.FC<ISvgDimensions> = ({
   width = '38px',
   height = '24px',
@@ -248,3 +243,9 @@ export const Discovery: React.FC<ISvgDimensions> = ({
     </svg>
   );
 };
+
+// === interfaces
+interface ISvgDimensions {
+  width?: string;
+  height?: string;
+}

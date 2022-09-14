@@ -4,8 +4,42 @@ import ReactDom from 'react-dom';
 import styled from '@emotion/styled';
 import CloseIcon from '@mui/icons-material/Close';
 
-import HorzontalLine from '../Components/HorzontalLine';
+import HorzontalLine from '../../Components/HorzontalLine';
 
+const CartSection: React.FC<ICartSection> = ({ showCart, setShowCart }) => {
+  const [isActive, setIsActive] = useState(false);
+  const modalRoot = document.getElementById('modal-root');
+
+  useEffect(() => {
+    if (showCart) {
+      setIsActive(true);
+    }
+  }, [showCart]);
+
+  const onClick = () => {
+    setIsActive(!isActive);
+    setTimeout(() => {
+      setShowCart(!showCart);
+    }, 400);
+  };
+
+  return ReactDom.createPortal(
+    <CartContentWrapper showCart={showCart}>
+      <CartArea className={isActive ? 'cartArea' : ''}>
+        <CartHeader>
+          <CartText>Cart</CartText> <CloseIconWrapper onClick={onClick} />
+        </CartHeader>
+        <HorzontalLine />
+        <CartText>Your cart is currently empty.</CartText>
+      </CartArea>
+    </CartContentWrapper>,
+    modalRoot!
+  );
+};
+
+export default CartSection;
+
+// === interfaces
 interface ICartContentWrapper {
   showCart: boolean;
 }
@@ -15,6 +49,7 @@ interface ICartSection {
   setShowCart: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
+// === styles
 const CartContentWrapper = styled.div<ICartContentWrapper>`
   position: fixed;
   top: 0;
@@ -83,36 +118,3 @@ const CloseIconWrapper = styled(CloseIcon)`
     cursor: pointer;
   }
 `;
-
-const CartSection: React.FC<ICartSection> = ({ showCart, setShowCart }) => {
-  const [isActive, setIsActive] = useState(false);
-  const modalRoot = document.getElementById('modal-root');
-
-  useEffect(() => {
-    if (showCart) {
-      setIsActive(true);
-    }
-  }, [showCart]);
-
-  const onClick = () => {
-    setIsActive(!isActive);
-    setTimeout(() => {
-      setShowCart(!showCart);
-    }, 400);
-  };
-
-  return ReactDom.createPortal(
-    <CartContentWrapper showCart={showCart}>
-      <CartArea className={isActive ? 'cartArea' : ''}>
-        <CartHeader>
-          <CartText>Cart</CartText> <CloseIconWrapper onClick={onClick} />
-        </CartHeader>
-        <HorzontalLine />
-        <CartText>Your cart is currently empty.</CartText>
-      </CartArea>
-    </CartContentWrapper>,
-    modalRoot!
-  );
-};
-
-export default CartSection;

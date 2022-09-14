@@ -4,15 +4,6 @@ import styled from '@emotion/styled';
 
 import Box from '../Components/Box';
 
-const Container = styled(Box)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-bottom: 2px solid ${({ theme }) => theme.palette.primaryTextColor};
-  padding: 8px 0px;
-  font-size: 2rem;
-`;
-
 function QuantitySetter() {
   const [counter, setCounter] = useState(1);
   return (
@@ -32,3 +23,13 @@ function QuantitySetter() {
 }
 
 export default QuantitySetter;
+
+// === styles
+const Container = styled(Box)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid ${({ theme }) => theme.palette.primaryTextColor};
+  padding: 8px 0px;
+  font-size: 2rem;
+`;

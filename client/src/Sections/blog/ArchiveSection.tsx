@@ -1,17 +1,9 @@
 import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 
-import ArchivePost from '../__mocks__/ArchivePost';
-import Box from '../Components/Box';
-import { BasicBlueLink } from '../Components/StyledLinks';
-
-const Heading = styled.div`
-  font-size: 1.5rem;
-`;
-
-const ArticleHeader = styled.div`
-  color: ${({ theme }) => theme.palette.primaryTextColor};
-`;
+import ArchivePost from '../../__mocks__/ArchivePost';
+import Box from '../../Components/Box';
+import { BasicBlueLink } from '../../Components/StyledLinks';
 
 const ArchiveSection = () => {
   const theme = useTheme();
@@ -32,3 +24,12 @@ const ArchiveSection = () => {
 };
 
 export default ArchiveSection;
+
+// === styles
+const Heading = styled.div`
+  font-size: 1.5rem;
+`;
+
+const ArticleHeader = styled.div`
+  color: ${({ theme }) => theme.palette.primaryTextColor};
+`;

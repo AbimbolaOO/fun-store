@@ -8,65 +8,6 @@ import Heading from '../../Components/Heading';
 import QuantitySetter from '../../Components/QuantitySetter';
 import { BasicBlueLink } from '../../Components/StyledLinks';
 
-const PriceSection = styled.div`
-  display: flex;
-  gap: 10px;
-`;
-
-const PriceTag = styled.div`
-  font-size: 1rem;
-`;
-
-const OldPriceTag = styled.div`
-  text-decoration: line-through;
-  color: ${({ theme }) => theme.palette.primaryTextColor};
-`;
-
-const Tags = styled.div`
-  border: 1px solid black;
-  padding: 2px 8px;
-  font-size: 1.2rem;
-  font-weight: 500;
-`;
-
-const LabelAndBtnBox = styled.div`
-  display: grid;
-  grid-template-columns: 100px auto;
-  align-items: center;
-  justify-content: start;
-`;
-
-interface ICircularImage {
-  src: string;
-}
-
-const CircularImage = styled.div<ICircularImage>`
-  width: 42px;
-  height: 42px;
-  background: center / cover no-repeat url(${({ src }) => src});
-  border-radius: 42px;
-  outline: none;
-  outline-offset: 0;
-  transition: outline-offset 0.1s ease-in;
-
-  &:hover {
-    outline: 1px solid ${({ theme }) => theme.palette.primaryTextColor};
-    outline-offset: 2px;
-  }
-`;
-
-interface ICircularIcons {
-  src: string;
-}
-const CircularIcons = styled.div<ICircularIcons>`
-  width: 42px;
-  height: 42px;
-  background: center / cover no-repeat url(${({ src }) => src});
-  border-radius: 42px;
-  outline: none;
-  outline-offset: 0;
-  transition: outline-offset 0.1s ease-in;
-`;
 const RightConfigurator = () => {
   const theme = useTheme();
   return (
@@ -173,3 +114,66 @@ const RightConfigurator = () => {
 };
 
 export default RightConfigurator;
+
+// === interfaces
+interface ICircularIcons {
+  src: string;
+}
+
+interface ICircularImage {
+  src: string;
+}
+
+// === styles
+const PriceSection = styled.div`
+  display: flex;
+  gap: 10px;
+`;
+
+const PriceTag = styled.div`
+  font-size: 1rem;
+`;
+
+const OldPriceTag = styled.div`
+  text-decoration: line-through;
+  color: ${({ theme }) => theme.palette.primaryTextColor};
+`;
+
+const Tags = styled.div`
+  border: 1px solid black;
+  padding: 2px 8px;
+  font-size: 1.2rem;
+  font-weight: 500;
+`;
+
+const LabelAndBtnBox = styled.div`
+  display: grid;
+  grid-template-columns: 100px auto;
+  align-items: center;
+  justify-content: start;
+`;
+
+const CircularImage = styled.div<ICircularImage>`
+  width: 42px;
+  height: 42px;
+  background: center / cover no-repeat url(${({ src }) => src});
+  border-radius: 42px;
+  outline: none;
+  outline-offset: 0;
+  transition: outline-offset 0.1s ease-in;
+
+  &:hover {
+    outline: 1px solid ${({ theme }) => theme.palette.primaryTextColor};
+    outline-offset: 2px;
+  }
+`;
+
+const CircularIcons = styled.div<ICircularIcons>`
+  width: 42px;
+  height: 42px;
+  background: center / cover no-repeat url(${({ src }) => src});
+  border-radius: 42px;
+  outline: none;
+  outline-offset: 0;
+  transition: outline-offset 0.1s ease-in;
+`;

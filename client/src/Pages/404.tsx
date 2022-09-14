@@ -4,6 +4,30 @@ import styled from '@emotion/styled';
 
 import Page from '../Components/Page';
 
+const NotFoundPage: React.FC = () => {
+  return (
+    <Page title="WhyteShops | 404">
+      <MainContainer>
+        <ImageBox></ImageBox>
+        <TextContainer>
+          <LargeText>Oops!</LargeText>
+          <LargeText>Page not found!</LargeText>
+          <SmallText>
+            <div>PLEASE GO BACK TO</div>
+            <StyledRouterLinkSecoundaryWrapper to="/">
+              HOMEPAGE
+            </StyledRouterLinkSecoundaryWrapper>
+          </SmallText>
+        </TextContainer>
+      </MainContainer>
+    </Page>
+  );
+};
+
+export default NotFoundPage;
+
+// === styles
+
 const MainContainer = styled.main`
   grid-column: 1/4;
   display: grid;
@@ -55,25 +79,3 @@ const ImageBox = styled.div`
   height: 100vh;
   background: center / cover no-repeat url('/static/img/notfoundImage.png');
 `;
-
-const NotFoundPage: React.FC = () => {
-  return (
-    <Page title="WhyteShops | 404">
-      <MainContainer>
-        <ImageBox></ImageBox>
-        <TextContainer>
-          <LargeText>Oops!</LargeText>
-          <LargeText>Page not found!</LargeText>
-          <SmallText>
-            <div>PLEASE GO BACK TO</div>
-            <StyledRouterLinkSecoundaryWrapper to="/">
-              HOMEPAGE
-            </StyledRouterLinkSecoundaryWrapper>
-          </SmallText>
-        </TextContainer>
-      </MainContainer>
-    </Page>
-  );
-};
-
-export default NotFoundPage;

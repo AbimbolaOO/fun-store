@@ -6,43 +6,7 @@ import AspectRatio from '@mui/icons-material/AspectRatio';
 
 import LabeledIcons from './LabeledIcons';
 
-interface IItemView {
-  src: string;
-}
-
-interface IContentWrapper extends IItemView {
-  zoom: boolean;
-}
-
-const StyledImg = styled.img``;
-
-const ContentWrapper = styled.div<IContentWrapper>`
-  display: grid;
-  opacity: 1;
-
-  & > * {
-    grid-column: 1;
-    grid-row: 1;
-  }
-
-  & > div.image-zoomer {
-    --x: 0px;
-    --y: 0px;
-    background-image: ${({ src }) => `url(${src})`};
-    background-repeat: no-repeat;
-    background-attachment: cover;
-    background-position: ${({ zoom }) =>
-      zoom ? `var(--x) var(--y)` : 'center'};
-    background-size: ${({ zoom }) => (zoom ? '200%' : '100%')};
-  }
-`;
-
-const EnlargeIcon = styled.div`
-  display: flex;
-  margin-left: auto;
-`;
-
-const ItemView: React.FC<IItemView> = ({ src }) => {
+const ItemView: React.FC<IItemView> = ({ src, onClick }) => {
   const theme = useTheme();
   const [zoom, setZoom] = useState(false);
   const rectRef = useRef<HTMLDivElement>(null);
@@ -76,7 +40,11 @@ const ItemView: React.FC<IItemView> = ({ src }) => {
       <StyledImg src="/static/img/dinma-3-seater-1.jpg" />
       <div ref={translationImageRef} className="image-zoomer"></div>
       <EnlargeIcon>
-        <LabeledIcons bgColor="clear" label="Click to enlarge">
+        <LabeledIcons
+          bgColor="clear"
+          label="Click to enlarge"
+          onClick={onClick}
+        >
           <AspectRatio sx={{ color: theme.palette.primaryTextColor }} />
         </LabeledIcons>
       </EnlargeIcon>
@@ -85,3 +53,43 @@ const ItemView: React.FC<IItemView> = ({ src }) => {
 };
 
 export default ItemView;
+
+// === interfaces
+interface IItemView {
+  src: string;
+  onClick?: React.Dispatch<React.SetStateAction<string>>;
+}
+
+interface IContentWrapper {
+  src: string;
+  zoom: boolean;
+}
+
+// === styles
+const StyledImg = styled.img``;
+
+const ContentWrapper = styled.div<IContentWrapper>`
+  display: grid;
+  opacity: 1;
+
+  & > * {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  & > div.image-zoomer {
+    --x: 0px;
+    --y: 0px;
+    background-image: ${({ src }) => `url(${src})`};
+    background-repeat: no-repeat;
+    background-attachment: cover;
+    background-position: ${({ zoom }) =>
+      zoom ? `var(--x) var(--y)` : 'center'};
+    background-size: ${({ zoom }) => (zoom ? '200%' : '100%')};
+  }
+`;
+
+const EnlargeIcon = styled.div`
+  display: flex;
+  margin-left: auto;
+`;

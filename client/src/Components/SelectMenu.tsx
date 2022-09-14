@@ -6,6 +6,35 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 import Box from './Box';
 
+const SelectMenu: React.FC<IClickDropDown> = ({ options, children }) => {
+  const [title, setTitle] = useState(children as string);
+  const theme = useTheme();
+
+  return (
+    <DropDownContainer>
+      <Box align="center" justify="center">
+        {title}{' '}
+        <KeyboardArrowDownIcon
+          sx={{ fontSize: '16px', color: `${theme.palette.primaryTextColor}` }}
+        />
+      </Box>
+      <DropBox className="dropBox">
+        {options.map((option: IOption) => (
+          <DropBoxItem
+            onClick={() => setTitle(`${option.key}`)}
+            key={option.key}
+          >
+            {option.value}
+          </DropBoxItem>
+        ))}
+      </DropBox>
+    </DropDownContainer>
+  );
+};
+
+export default SelectMenu;
+
+// === interfaces
 interface IOption {
   key: string;
   value: string;
@@ -16,6 +45,7 @@ interface IClickDropDown {
   options: IOption[];
 }
 
+// === styles
 const DropDownContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -57,31 +87,3 @@ const DropBoxItem = styled.div`
     transform: translateX(5px);
   }
 `;
-
-const SelectMenu: React.FC<IClickDropDown> = ({ options, children }) => {
-  const [title, setTitle] = useState(children as string);
-  const theme = useTheme();
-
-  return (
-    <DropDownContainer>
-      <Box align="center" justify="center">
-        {title}{' '}
-        <KeyboardArrowDownIcon
-          sx={{ fontSize: '16px', color: `${theme.palette.primaryTextColor}` }}
-        />
-      </Box>
-      <DropBox className="dropBox">
-        {options.map((option: IOption) => (
-          <DropBoxItem
-            onClick={() => setTitle(`${option.key}`)}
-            key={option.key}
-          >
-            {option.value}
-          </DropBoxItem>
-        ))}
-      </DropBox>
-    </DropDownContainer>
-  );
-};
-
-export default SelectMenu;

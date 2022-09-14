@@ -2,6 +2,32 @@ import React from 'react';
 
 import styled from '@emotion/styled';
 
+const Label: React.FC<ILabel> = ({ label }) => {
+  return (
+    <SurfaceIconBoxLabelBox className="iconLabel">
+      <LabelBoxText>{label}</LabelBoxText>
+      <Triangle></Triangle>
+    </SurfaceIconBoxLabelBox>
+  );
+};
+
+const LabeledIcons: React.FC<ILabelIcons> = ({
+  label,
+  bgColor,
+  children,
+  onClick,
+}) => {
+  return (
+    <SurfaceIconsBox bgColor={bgColor} onClick={onClick}>
+      {children}
+      <Label label={label} />
+    </SurfaceIconsBox>
+  );
+};
+
+export default LabeledIcons;
+
+// === interfaces
 interface ILabel {
   label: string;
 }
@@ -10,12 +36,14 @@ interface ILabelIcons {
   children: any;
   label: string;
   bgColor?: string;
+  onClick?: any;
 }
 
-interface SurfaceIconsBox {
+interface ISurfaceIconsBox {
   bgColor?: string;
 }
 
+// === styles
 const Triangle = styled.div`
   width: 14px;
   height: 14px;
@@ -23,7 +51,7 @@ const Triangle = styled.div`
   border-left: 7px solid black;
 `;
 
-const SurfaceIconsBox = styled.div<SurfaceIconsBox>`
+const SurfaceIconsBox = styled.div<ISurfaceIconsBox>`
   display: flex;
   width: 3rem;
   height: 3rem;
@@ -61,22 +89,3 @@ const LabelBoxText = styled.div`
   background-color: ${({ theme }) => theme.palette.bgColorSecondary};
   padding: 2px 10px;
 `;
-const Label: React.FC<ILabel> = ({ label }) => {
-  return (
-    <SurfaceIconBoxLabelBox className="iconLabel">
-      <LabelBoxText>{label}</LabelBoxText>
-      <Triangle></Triangle>
-    </SurfaceIconBoxLabelBox>
-  );
-};
-
-const LabeledIcons: React.FC<ILabelIcons> = ({ label, bgColor, children }) => {
-  return (
-    <SurfaceIconsBox bgColor={bgColor}>
-      {children}
-      <Label label={label} />
-    </SurfaceIconsBox>
-  );
-};
-
-export default LabeledIcons;

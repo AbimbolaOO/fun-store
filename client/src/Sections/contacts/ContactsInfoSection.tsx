@@ -4,38 +4,6 @@ import EmailIcon from '@mui/icons-material/Email';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 
-const ContactWrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-
-  @media screen and (max-width: 762px) {
-    grid-template-columns: auto;
-  }
-`;
-
-const ContactSectionHeader = styled.div`
-  grid-column: 2 / span 1;
-`;
-
-const ContactSectionBody = styled.div`
-  grid-column: 2 / span 1;
-`;
-
-const ContactSectionImg = styled.div`
-  grid-column: 1 / span 1;
-`;
-
-const ContactTile = styled.div`
-  display: grid;
-  grid-template-columns: 40px auto;
-  grid-template-rows: repeat(3, 40px);
-  gap: 10px;
-  @media screen and (max-width: 762px) {
-    grid-template-rows: auto;
-  }
-`;
-
 const ContactsInfoSection = () => {
   return (
     <ContactWrapper>
@@ -76,3 +44,37 @@ const ContactsInfoSection = () => {
 };
 
 export default ContactsInfoSection;
+
+// === styles
+
+const ContactWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+
+  @media screen and (max-width: 762px) {
+    grid-template-columns: auto;
+  }
+`;
+
+const ContactSectionHeader = styled.div`
+  grid-column: 2 / span 1;
+`;
+
+const ContactSectionBody = styled.div`
+  grid-column: 2 / span 1;
+`;
+
+const ContactSectionImg = styled.div`
+  grid-column: 1 / span 1;
+`;
+
+const ContactTile = styled.div`
+  display: grid;
+  grid-template-columns: 40px auto;
+  grid-template-rows: repeat(3, 40px);
+  gap: 10px;
+  @media screen and (max-width: 762px) {
+    grid-template-rows: auto;
+  }
+`;

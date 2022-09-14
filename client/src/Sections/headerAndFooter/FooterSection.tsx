@@ -1,23 +1,16 @@
 import styled from '@emotion/styled';
 
-import Box from '../Components/Box';
-import { Discovery, Maestro, Master, Opay, Paypal, Visa } from '../Components/PaymentsVendorIcons';
-import SocialIconsGroup from '../Components/SocialIconsGroup';
-import { StyledRouterLinkSecoundary } from '../Components/StyledLinks';
-
-const FooterLinksGroup = styled.ul`
-  display: flex;
-  column-gap: 50px;
-  padding: 0;
-  justify-content: center;
-  list-style: none;
-  /* border: 2px solid red; */
-  flex-wrap: wrap;
-`;
-
-const FooterLinksGroupItem = styled.li`
-  cursor: pointer;
-`;
+import Box from '../../Components/Box';
+import {
+  Discovery,
+  Maestro,
+  Master,
+  Opay,
+  Paypal,
+  Visa,
+} from '../../Components/PaymentsVendorIcons';
+import SocialIconsGroup from '../../Components/SocialIconsGroup';
+import { StyledRouterLinkSecoundary } from '../../Components/StyledLinks';
 
 const FooterSection: React.FC = () => {
   return (
@@ -59,3 +52,17 @@ const FooterSection: React.FC = () => {
 };
 
 export default FooterSection;
+
+// === styles
+const FooterLinksGroup = styled.ul`
+  display: flex;
+  column-gap: 50px;
+  padding: 0;
+  justify-content: center;
+  list-style: none;
+  flex-wrap: wrap;
+`;
+
+const FooterLinksGroupItem = styled.li`
+  cursor: pointer;
+`;
