@@ -6,12 +6,7 @@ import styled from '@emotion/styled';
 import HamburgerMenu from '../../Components/HamburgerMenu';
 import { HoverDropDown } from '../../Components/HoverDropDown';
 // import AnimatingHambugerIcon from '../Components/AnimatingHambugerIcon';
-import {
-  Cart,
-  HamburgerMenuIcon,
-  Profile,
-  Search,
-} from '../../Components/MenuIcons';
+import { Cart, HamburgerMenuIcon, Profile, Search } from '../../Components/MenuIcons';
 import { StyledRouterLink } from '../../Components/StyledLinks';
 import CartSection from './CartSection';
 import SearchSeaction from './SearchSeaction';
@@ -130,6 +125,7 @@ const NavMenuSuperContainerWrapper = styled.div`
   grid-column: 1/4;
   grid-template-columns: 1fr 26fr 1fr;
   background-color: white;
+  z-index: 2;
 
   @media screen and (max-width: 1200px) {
     grid-template-columns: 1fr 8fr 1fr;
@@ -137,7 +133,7 @@ const NavMenuSuperContainerWrapper = styled.div`
 
   &.sticky {
     position: sticky;
-    z-index: 2;
+
     top: 0;
     box-shadow: rgba(144, 144, 144, 0.24) 0px 4px 8px;
   }

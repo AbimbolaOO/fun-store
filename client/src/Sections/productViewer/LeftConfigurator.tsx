@@ -25,12 +25,6 @@ const LeftConfigurator: React.FC<ILeftConfigurator> = ({ src, onClick }) => {
 
 export default LeftConfigurator;
 
-// === interfaces
-interface ILeftConfigurator {
-  src: string;
-  onClick?: React.Dispatch<React.SetStateAction<string>>;
-}
-
 // === data
 const data = [
   { src: '/static/img/dinma-3-seater.jpg' },
@@ -38,6 +32,12 @@ const data = [
   { src: '/static/img/dinma-3-seater.jpg' },
   { src: '/static/img/dinma-3-seater-1.jpg' },
 ];
+
+// === interfaces
+interface ILeftConfigurator {
+  src: string;
+  onClick?: React.Dispatch<React.SetStateAction<string>>;
+}
 
 // === styles
 const ViewerShell = styled.div``;
@@ -47,6 +47,7 @@ const AnimatingPosition = styled.div`
   top: 80px;
 `;
 const ImageOptions = styled(Box)`
+  cursor: pointer;
   @media screen and (max-width: 760px) {
     margin-left: 0;
     margin-right: 0;
