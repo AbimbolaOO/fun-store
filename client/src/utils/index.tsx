@@ -6,3 +6,7 @@ export function splitOnCapitalLetter(str: string) {
   const splitedWords = str.split(/(?=[A-Z])/);
   return splitedWords.join(' ');
 }
+
+export const sleep = (time: number) => {
+  return new Promise((resolve) => setTimeout(resolve, time));
+};
